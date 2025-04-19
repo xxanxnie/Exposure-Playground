@@ -1,0 +1,12 @@
+[
+    {
+      "prompt": "How would you adjust ISO in low light?",
+      "options": ["Increase", "Decrease"],
+      "answer": "Increase"
+    },
+    {
+      "prompt": "What does fast shutter speed do?",
+      "options": ["Blur motion", "Freeze motion"],
+      "answer": "Freeze motion"
+    }
+  ]

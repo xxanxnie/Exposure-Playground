@@ -1,0 +1,38 @@
+[
+  {
+    "event": "Reached quiz result page",
+    "time": "2025-04-19T02:50:32.276768"
+  },
+  {
+    "event": "Entered home page",
+    "time": "2025-04-19T02:50:35.856122"
+  },
+  {
+    "event": "Entered lesson 1",
+    "time": "2025-04-19T02:50:39.262052"
+  },
+  {
+    "event": "Entered lesson 2",
+    "time": "2025-04-19T02:50:40.484013"
+  },
+  {
+    "event": "Entered lesson 3",
+    "time": "2025-04-19T02:50:41.113994"
+  },
+  {
+    "event": "Answered question 2 with Increase",
+    "time": "2025-04-19T02:50:46.209434"
+  },
+  {
+    "event": "Answered question 3 with Freeze motion",
+    "time": "2025-04-19T02:50:48.065617"
+  },
+  {
+    "event": "Reached quiz result page",
+    "time": "2025-04-19T02:50:48.072873"
+  },
+  {
+    "event": "Entered home page",
+    "time": "2025-04-19T02:50:50.932568"
+  }
+]
