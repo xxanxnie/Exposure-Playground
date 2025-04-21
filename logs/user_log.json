@@ -1,46 +1,46 @@
 [
   {
-    "event": "Visited interact page for iso",
-    "time": "2025-04-21T00:07:55.447581"
+    "event": "Visited learn overview page",
+    "time": "2025-04-21T00:09:22.983517"
   },
   {
     "event": "Visited learn overview page",
-    "time": "2025-04-21T00:08:00.880192"
+    "time": "2025-04-21T00:09:23.636853"
   },
   {
     "event": "Visited interact page for shutter",
-    "time": "2025-04-21T00:08:01.961168"
+    "time": "2025-04-21T00:09:26.616152"
   },
   {
     "event": "Entered home page",
-    "time": "2025-04-21T00:08:02.781340"
+    "time": "2025-04-21T00:09:30.644968"
   },
   {
     "event": "Visited learn overview page",
-    "time": "2025-04-21T00:08:03.755810"
-  },
-  {
-    "event": "Entered lesson: shutter",
-    "time": "2025-04-21T00:08:04.527197"
-  },
-  {
-    "event": "Entered home page",
-    "time": "2025-04-21T00:08:12.693153"
+    "time": "2025-04-21T00:09:32.341308"
   },
   {
     "event": "Visited about page",
-    "time": "2025-04-21T00:08:14.449235"
-  },
-  {
-    "event": "Reached quiz result page",
-    "time": "2025-04-21T00:08:15.423038"
-  },
-  {
-    "event": "Visited learn overview page",
-    "time": "2025-04-21T00:08:16.312076"
+    "time": "2025-04-21T00:09:36.046936"
   },
   {
     "event": "Entered home page",
-    "time": "2025-04-21T00:08:17.360000"
+    "time": "2025-04-21T00:09:43.824518"
+  },
+  {
+    "event": "Entered lesson: iso",
+    "time": "2025-04-21T00:09:49.512529"
+  },
+  {
+    "event": "Entered home page",
+    "time": "2025-04-21T00:18:13.174726"
+  },
+  {
+    "event": "Visited learn overview page",
+    "time": "2025-04-21T00:18:14.508438"
+  },
+  {
+    "event": "Entered lesson: iso",
+    "time": "2025-04-21T00:18:15.142537"
   }
 ]
