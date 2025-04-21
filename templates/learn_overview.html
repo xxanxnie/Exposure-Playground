@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    {% include "navbar.html" %}
+
+    <div class="container mt-5">
+        <div class="row text-center">
+            <!-- ISO Panel -->
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <h4 class="card-title">Learn ISO</h4>
+                        <p class="card-text">ISO controls the sensitivity to light. Higher ISO = brighter, but more noise.</p>
+                        <div class="d-grid gap-2">
+                            <a href="/learn/iso" class="btn btn-primary">Start Learning</a>
+                            <a href="/interact/iso" class="btn btn-outline-primary">Play Around!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Shutter Speed Panel -->
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <h4 class="card-title">Learn Shutter Speed</h4>
+                        <p class="card-text">Shutter speed determines how long light hits the sensor. Fast = freeze motion.</p>
+                        <div class="d-grid gap-2">
+                            <a href="/learn/shutter" class="btn btn-primary">Start Learning</a>
+                            <a href="/interact/shutter" class="btn btn-outline-primary">Play Around!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Aperture Panel -->
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <h4 class="card-title">Learn Aperture</h4>
+                        <p class="card-text">Aperture controls depth of field. Wide open = blurry background.</p>
+                        <div class="d-grid gap-2">
+                            <a href="/learn/aperture" class="btn btn-primary">Start Learning</a>
+                            <a href="/interact/aperture" class="btn btn-outline-primary">Play Around!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

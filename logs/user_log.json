@@ -1,38 +1,46 @@
 [
   {
-    "event": "Reached quiz result page",
-    "time": "2025-04-19T02:50:32.276768"
+    "event": "Visited interact page for iso",
+    "time": "2025-04-21T00:07:55.447581"
+  },
+  {
+    "event": "Visited learn overview page",
+    "time": "2025-04-21T00:08:00.880192"
+  },
+  {
+    "event": "Visited interact page for shutter",
+    "time": "2025-04-21T00:08:01.961168"
   },
   {
     "event": "Entered home page",
-    "time": "2025-04-19T02:50:35.856122"
+    "time": "2025-04-21T00:08:02.781340"
   },
   {
-    "event": "Entered lesson 1",
-    "time": "2025-04-19T02:50:39.262052"
+    "event": "Visited learn overview page",
+    "time": "2025-04-21T00:08:03.755810"
   },
   {
-    "event": "Entered lesson 2",
-    "time": "2025-04-19T02:50:40.484013"
-  },
-  {
-    "event": "Entered lesson 3",
-    "time": "2025-04-19T02:50:41.113994"
-  },
-  {
-    "event": "Answered question 2 with Increase",
-    "time": "2025-04-19T02:50:46.209434"
-  },
-  {
-    "event": "Answered question 3 with Freeze motion",
-    "time": "2025-04-19T02:50:48.065617"
-  },
-  {
-    "event": "Reached quiz result page",
-    "time": "2025-04-19T02:50:48.072873"
+    "event": "Entered lesson: shutter",
+    "time": "2025-04-21T00:08:04.527197"
   },
   {
     "event": "Entered home page",
-    "time": "2025-04-19T02:50:50.932568"
+    "time": "2025-04-21T00:08:12.693153"
+  },
+  {
+    "event": "Visited about page",
+    "time": "2025-04-21T00:08:14.449235"
+  },
+  {
+    "event": "Reached quiz result page",
+    "time": "2025-04-21T00:08:15.423038"
+  },
+  {
+    "event": "Visited learn overview page",
+    "time": "2025-04-21T00:08:16.312076"
+  },
+  {
+    "event": "Entered home page",
+    "time": "2025-04-21T00:08:17.360000"
   }
 ]

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{{ interaction.title }}</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+	<style>
+		.container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 50px;
+		}
+		.camera-wrapper {
+			position: relative;
+		}
+		.camera-img {
+			width: 1100px;
+		}
+		.photo-display {
+			position: absolute;
+			top: 250px;
+			left: 180px;
+			width: 506px;
+			height: 359px;
+			object-fit: cover;
+			pointer-events: none;
+		}
+		.controls {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			font-weight: bold;
+			gap: 20px;
+		}
+
+		.controls .title {
+			font-size: 1.3rem;
+			margin-bottom: 10px;
+		}
+
+		.vertical-bar-wrapper {
+			position: relative;
+			height: 300px;
+			display: flex;
+			align-items: center;
+			justify-content: flex-start;
+		}
+
+		.slider-handle {
+			position: absolute;
+			top: 0;
+			left: 0;
+			transform: translate(-50%, -50%);
+			font-size: 2.5rem;
+			cursor: grab;
+			transition: top 0.15s ease;
+			z-index: 10;
+		}
+
+		.vertical-bar {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			height: 100%;
+			border-left: 4px solid #000;
+			padding-left: 30px;
+			gap: 10px;
+			position: relative;
+		}
+
+		.bar-option {
+			cursor: pointer;
+			font-size: 1rem;
+			transition: all 0.2s ease;
+		}
+
+		.bar-option:hover {
+			transform: scale(1.15);
+			font-weight: 700;
+			color: #e67e22;
+		}
+
+		.bar-option.active {
+			font-size: 1.3rem;
+			color: #000;
+			font-weight: 800;
+		}
+
+		
+	</style>
+</head>
+<body>
+
+	{% include "navbar.html" %}
+
+	<div class="container">
+		<div class="camera-wrapper">
+			<img src="{{ url_for('static', filename='images/camera.png') }}" class="camera-img" alt="Camera Body">
+			<img id="photo" src="{{ url_for('static', filename='images/' + 
+			interaction.image_prefix + interaction.options[0]|replace('/', '')|
+			replace('.', '') + '.png') }}"
+			class="photo-display" alt="Camera Display">
+		</div>
+		<div class="controls">
+			<div class="title">{{ interaction.title }}</div>
+			<div class="vertical-bar-wrapper">
+				<div class="slider-handle" id="handle">📸</div>
+				<div class="vertical-bar" id="bar">
+					{% for opt in interaction.options %}
+						<div class="bar-option" onclick="changeImage('{{ opt }}')" data-value="{{ opt }}">
+							{{ opt }}
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		const options = Array.from(document.querySelectorAll('.bar-option'));
+		const handle = document.getElementById('handle');
+		const bar = document.getElementById('bar');
+	
+		function sanitizeFilename(opt) {
+			return opt.replaceAll('/', '').replaceAll('.', '').replaceAll('f', 'f');
+		}
+	
+		function updateActive(index) {
+			options.forEach(el => el.classList.remove('active'));
+			const selected = options[index];
+			if (selected) {
+				selected.classList.add('active');
+
+				const optionRect = selected.getBoundingClientRect();
+				const barTop = bar.getBoundingClientRect().top;
+				const optionCenter = optionRect.top + optionRect.height / 2;
+
+				handle.style.top = (optionCenter - barTop) + 'px';
+
+				const optVal = selected.dataset.value;
+				const img = document.getElementById('photo');
+				const prefix = "{{ interaction.image_prefix }}";
+				const filename = sanitizeFilename(optVal);
+				img.src = `/static/images/${prefix}${filename}.png`;
+			}
+		}
+
+		let currentIndex = 0;
+		updateActive(currentIndex);
+	
+		// Scroll wheel support
+		bar.addEventListener('wheel', e => {
+			e.preventDefault();
+			if (e.deltaY > 0 && currentIndex < options.length - 1) {
+				currentIndex++;
+			} else if (e.deltaY < 0 && currentIndex > 0) {
+				currentIndex--;
+			}
+			updateActive(currentIndex);
+		});
+	
+		// Drag support
+		let dragging = false;
+	
+		handle.addEventListener('mousedown', e => {
+			e.preventDefault();
+			dragging = true;
+			handle.style.cursor = 'grabbing';
+		});
+	
+		document.addEventListener('mouseup', () => {
+			if (dragging) {
+				dragging = false;
+				handle.style.cursor = 'grab';
+			}
+		});
+	
+		document.addEventListener('mousemove', e => {
+			if (!dragging) return;
+	
+			const barRect = bar.getBoundingClientRect();
+			const y = e.clientY - barRect.top;
+	
+			// Find nearest option
+			let minDiff = Infinity;
+			let closestIndex = 0;
+	
+			options.forEach((opt, idx) => {
+				const optRect = opt.getBoundingClientRect();
+				const optY = optRect.top + optRect.height / 2 - barRect.top;
+				const diff = Math.abs(y - optY);
+				if (diff < minDiff) {
+					minDiff = diff;
+					closestIndex = idx;
+				}
+			});
+	
+			if (closestIndex !== currentIndex) {
+				currentIndex = closestIndex;
+				updateActive(currentIndex);
+			}
+		});
+	
+		options.forEach((opt, idx) => {
+			opt.addEventListener("click", () => {
+				currentIndex = idx;
+				updateActive(currentIndex);
+			});
+		});
+	</script>
+	
+
+</body>
+</html>
