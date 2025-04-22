@@ -66,15 +66,24 @@ def quiz_page(question_id):
 
 @app.route("/result")
 def result():
-    log_event("Reached quiz result page")
+	# log_event("Reached quiz result page")
     answers = session.get("answers", [])
-    score = sum(
-        1 for idx, user_ans in enumerate(answers)
-        if idx < len(quiz) and user_ans == quiz[idx]["answer"]
-    )
+    all_questions = []
+
+    for idx, q in enumerate(quiz):
+        user_ans = answers[idx] if idx < len(answers) else None
+        all_questions.append({
+            "prompt": q["prompt"],
+            "user_answer": user_ans,
+            "correct_answer": q["answer"],
+            "explanation": q.get("explanation", "")
+        })
+
+    score = sum(1 for q in all_questions if q["user_answer"] == q["correct_answer"])
     total = len(quiz)
-    session.pop("answers", None)
-    return render_template("result.html", score=score, total=total)
+
+    return render_template("result.html", score=score, total=total, all_questions=all_questions)
+
 
 @app.route("/log_event", methods=["POST"])
 def log_event_api():

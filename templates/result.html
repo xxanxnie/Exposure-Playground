@@ -1,20 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Quiz Result</title>
+    <title>Quiz Report</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .question-summary a {
+            width: 50px;
+        }
+    </style>
 </head>
+
 <body>
     {% include "navbar.html" %}
 
     <div class="container mt-5 text-center">
         <h2>🎉 Quiz Complete!</h2>
-        <p>Your score will appear here. (You can implement scoring logic later.)</p>
-        <a class="btn btn-secondary mt-3" href="/">Return to Home</a>
+        <p class="lead">Your score: <strong>{{ score }} / {{ total }}</strong></p>
+
+        <div class="mt-4 d-flex flex-column align-items-center gap-2">
+            <a class="btn btn-primary w-40" href="/quiz/1">🔁 Retry Full Quiz</a>
+            <a class="btn btn-outline-info w-40" href="/about">📚 Want to Learn More?</a>
+            <a class="btn btn-secondary w-40" href="/">Return to Home</a>
+        </div>
+    </div>
+
+    <div class="container mt-5 text-center">
+        <h4>📋 Answer Overview</h4>
+        <div class="question-summary d-flex flex-wrap justify-content-center mt-3">
+            {% for item in all_questions %}
+            <a href="#q{{ loop.index }}" class="btn btn-sm me-2 mb-2
+            {% if item.user_answer == item.correct_answer %}
+              btn-success
+            {% else %}
+              btn-danger
+            {% endif %}">
+                Q{{ loop.index }}
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="container mt-5 text-start">
+        <div class="d-flex justify-content-between align-items-center">
+            <h4 class="mb-0">🔍 Detailed Review</h4>
+            <button class="btn btn-outline-dark btn-sm" type="button" data-bs-toggle="collapse"
+                data-bs-target="#reviewCollapse" aria-expanded="false" aria-controls="reviewCollapse">
+                Show / Hide All
+            </button>
+        </div>
+
+        <div class="collapse mt-3" id="reviewCollapse">
+            <ul class="list-group mt-3">
+                {% for item in all_questions %}
+                <li class="list-group-item">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h5 id="q{{ loop.index }}">
+                            Q{{ loop.index }}
+                            {% if item.user_answer == item.correct_answer %}
+                            <span class="text-success">✅ Correct</span>
+                            {% else %}
+                            <span class="text-danger">❌ Incorrect</span>
+                            {% endif %}
+                        </h5>
+                        <button class="btn btn-sm btn-outline-secondary" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapse{{ loop.index }}" aria-expanded="false"
+                            aria-controls="collapse{{ loop.index }}">
+                            📖 View
+                        </button>
+                    </div>
+
+                    <div class="collapse mt-2" id="collapse{{ loop.index }}">
+                        <p><strong>{{ item.prompt }}</strong></p>
+                        <p>Your answer: <strong>{{ item.user_answer }}</strong> |
+                            Correct answer: <strong>{{ item.correct_answer }}</strong></p>
+                        {% if item.explanation %}
+                        <div><em>Explanation:</em> {{ item.explanation }}</div>
+                        {% endif %}
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-</html>
 
+</html>

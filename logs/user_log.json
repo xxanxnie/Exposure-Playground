@@ -1,74 +1,70 @@
 [
   {
     "event": "Entered home page",
-    "time": "2025-04-22T00:48:47.575449"
+    "time": "2025-04-22T04:24:58.392749"
   },
   {
-    "event": "Answered question 1 with Decrease",
-    "time": "2025-04-22T00:48:51.646376"
+    "event": "Answered question 1 with Increase",
+    "time": "2025-04-22T04:25:04.510902"
   },
   {
     "event": "Answered question 2 with Increase",
-    "time": "2025-04-22T00:48:52.640766"
+    "time": "2025-04-22T04:25:05.902528"
   },
   {
-    "event": "Answered question 3 with Decrease",
-    "time": "2025-04-22T00:48:54.702545"
+    "event": "Answered question 3 with Increase",
+    "time": "2025-04-22T04:25:07.014582"
   },
   {
-    "event": "Answered question 4 with Decrease",
-    "time": "2025-04-22T00:48:55.961928"
+    "event": "Answered question 4 with Increase",
+    "time": "2025-04-22T04:25:08.309523"
   },
   {
-    "event": "Answered question 5 with Decrease",
-    "time": "2025-04-22T00:48:56.691535"
+    "event": "Answered question 5 with Increase",
+    "time": "2025-04-22T04:25:09.538087"
   },
   {
-    "event": "Answered question 6 with Decrease",
-    "time": "2025-04-22T00:48:57.402704"
+    "event": "Answered question 6 with Increase",
+    "time": "2025-04-22T04:25:10.821279"
   },
   {
-    "event": "Answered question 7 with Decrease",
-    "time": "2025-04-22T00:48:58.417050"
+    "event": "Answered question 7 with Increase",
+    "time": "2025-04-22T04:25:11.942999"
   },
   {
-    "event": "Answered question 8 with Decrease",
-    "time": "2025-04-22T00:48:59.156416"
+    "event": "Answered question 8 with Increase",
+    "time": "2025-04-22T04:25:13.570479"
   },
   {
     "event": "Answered question 9 with Increase",
-    "time": "2025-04-22T00:49:00.446197"
+    "time": "2025-04-22T04:25:15.677517"
   },
   {
     "event": "Answered question 10 with Increase",
-    "time": "2025-04-22T00:49:01.505515"
+    "time": "2025-04-22T04:25:18.176301"
   },
   {
-    "event": "Answered question 11 with Decrease",
-    "time": "2025-04-22T00:49:02.508152"
+    "event": "Answered question 11 with Increase",
+    "time": "2025-04-22T04:25:19.422810"
   },
   {
-    "event": "Answered question 12 with Decrease",
-    "time": "2025-04-22T00:49:04.284100"
+    "event": "Answered question 12 with Increase",
+    "time": "2025-04-22T04:25:20.668229"
   },
   {
-    "event": "Answered question 13 with Decrease",
-    "time": "2025-04-22T00:49:06.053986"
+    "event": "Answered question 13 with Increase",
+    "time": "2025-04-22T04:25:21.872781"
   },
   {
-    "event": "Answered question 14 with Decrease",
-    "time": "2025-04-22T00:49:07.102596"
+    "event": "Answered question 14 with Increase",
+    "time": "2025-04-22T04:25:23.226657"
   },
   {
-    "event": "Answered question 15 with Decrease",
-    "time": "2025-04-22T00:49:08.164053"
+    "event": "Answered question 15 with Increase",
+    "time": "2025-04-22T04:25:24.582626"
   },
   {
-    "event": "Reached quiz result page",
-    "time": "2025-04-22T00:49:08.172533"
-  },
-  {
-    "event": "Entered home page",
-    "time": "2025-04-22T00:49:10.815043"
+    "event": "Visited about page",
+    "time": "2025-04-22T04:27:55.331182"
   }
 ]
