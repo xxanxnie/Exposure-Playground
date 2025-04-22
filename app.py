@@ -32,6 +32,7 @@ def learn(topic):
 	}
 
 	if topic not in topic_map:
+		# TODO include some kind of error message
 		return redirect(url_for("home"))
 
 	lesson_id = topic_map[topic] + 1

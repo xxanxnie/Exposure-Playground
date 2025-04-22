@@ -1,0 +1,26 @@
+/* Global styles */
+.page-wrapper {
+    padding-top: 20px;
+    text-align: center;
+}
+
+/* CSS styles for learn.html */
+.learn-camera-container {
+    position: relative;
+}
+
+.learn-camera-container .camera-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.learn-camera-container #camera-shutter-button {
+    top: 23%;
+    left: 74%;
+    height: 5%;
+    width: 12%;
+    transform: translate(-50%, -50%);
+    background-color: transparent;
+}
