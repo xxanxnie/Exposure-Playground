@@ -44,7 +44,10 @@ def learn(topic):
 
 @app.route("/quiz/<int:question_id>", methods=["GET", "POST"])
 def quiz_page(question_id):
-    if "answers" not in session:
+    if question_id == 1:
+        session["answers"] = [] 
+        
+    elif "answers" not in session:
         session["answers"] = []
 
     if request.method == "POST":
