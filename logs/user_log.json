@@ -1,46 +1,74 @@
 [
   {
-    "event": "Visited learn overview page",
-    "time": "2025-04-21T00:09:22.983517"
+    "event": "Entered home page",
+    "time": "2025-04-22T00:48:47.575449"
   },
   {
-    "event": "Visited learn overview page",
-    "time": "2025-04-21T00:09:23.636853"
+    "event": "Answered question 1 with Decrease",
+    "time": "2025-04-22T00:48:51.646376"
   },
   {
-    "event": "Visited interact page for shutter",
-    "time": "2025-04-21T00:09:26.616152"
+    "event": "Answered question 2 with Increase",
+    "time": "2025-04-22T00:48:52.640766"
+  },
+  {
+    "event": "Answered question 3 with Decrease",
+    "time": "2025-04-22T00:48:54.702545"
+  },
+  {
+    "event": "Answered question 4 with Decrease",
+    "time": "2025-04-22T00:48:55.961928"
+  },
+  {
+    "event": "Answered question 5 with Decrease",
+    "time": "2025-04-22T00:48:56.691535"
+  },
+  {
+    "event": "Answered question 6 with Decrease",
+    "time": "2025-04-22T00:48:57.402704"
+  },
+  {
+    "event": "Answered question 7 with Decrease",
+    "time": "2025-04-22T00:48:58.417050"
+  },
+  {
+    "event": "Answered question 8 with Decrease",
+    "time": "2025-04-22T00:48:59.156416"
+  },
+  {
+    "event": "Answered question 9 with Increase",
+    "time": "2025-04-22T00:49:00.446197"
+  },
+  {
+    "event": "Answered question 10 with Increase",
+    "time": "2025-04-22T00:49:01.505515"
+  },
+  {
+    "event": "Answered question 11 with Decrease",
+    "time": "2025-04-22T00:49:02.508152"
+  },
+  {
+    "event": "Answered question 12 with Decrease",
+    "time": "2025-04-22T00:49:04.284100"
+  },
+  {
+    "event": "Answered question 13 with Decrease",
+    "time": "2025-04-22T00:49:06.053986"
+  },
+  {
+    "event": "Answered question 14 with Decrease",
+    "time": "2025-04-22T00:49:07.102596"
+  },
+  {
+    "event": "Answered question 15 with Decrease",
+    "time": "2025-04-22T00:49:08.164053"
+  },
+  {
+    "event": "Reached quiz result page",
+    "time": "2025-04-22T00:49:08.172533"
   },
   {
     "event": "Entered home page",
-    "time": "2025-04-21T00:09:30.644968"
-  },
-  {
-    "event": "Visited learn overview page",
-    "time": "2025-04-21T00:09:32.341308"
-  },
-  {
-    "event": "Visited about page",
-    "time": "2025-04-21T00:09:36.046936"
-  },
-  {
-    "event": "Entered home page",
-    "time": "2025-04-21T00:09:43.824518"
-  },
-  {
-    "event": "Entered lesson: iso",
-    "time": "2025-04-21T00:09:49.512529"
-  },
-  {
-    "event": "Entered home page",
-    "time": "2025-04-21T00:18:13.174726"
-  },
-  {
-    "event": "Visited learn overview page",
-    "time": "2025-04-21T00:18:14.508438"
-  },
-  {
-    "event": "Entered lesson: iso",
-    "time": "2025-04-21T00:18:15.142537"
+    "time": "2025-04-22T00:49:10.815043"
   }
 ]

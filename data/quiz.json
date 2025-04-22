@@ -1,12 +1,94 @@
 [
-    {
-      "prompt": "How would you adjust ISO in low light?",
-      "options": ["Increase", "Decrease"],
-      "answer": "Increase"
-    },
-    {
-      "prompt": "What does fast shutter speed do?",
-      "options": ["Blur motion", "Freeze motion"],
-      "answer": "Freeze motion"
-    }
-  ]
+  {
+    "prompt": "In this image, the basketball player appears frozen mid-air with no motion blur. To create a motion blur effect instead, what should you do to the shutter speed?",
+    "options": ["Increase", "Decrease"],
+    "answer": "Decrease",
+    "image": "quiz_shutter1.jpg"
+  },
+  {
+    "prompt": "The dog running in this photo is completely blurry. To capture it sharply next time, what should you do to the shutter speed?",
+    "options": ["Increase", "Decrease"],
+    "answer": "Increase",
+    "image": "quiz_shutter2.jpg"
+  },
+  {
+    "prompt": "The car headlights look like long light streaks. You want them to look like normal headlights instead. What should you do to the shutter speed?",
+    "options": ["Increase", "Decrease"],
+    "answer": "Increase",
+    "image": "quiz_shutter3.jpg"
+  },
+  {
+    "prompt": "The waterfall looks smooth and misty in the photo. If you want to capture individual droplets of water instead, what should you do to the shutter speed?",
+    "options": ["Increase", "Decrease"],
+    "answer": "Increase",
+    "image": "quiz_shutter4.jpg"
+  },
+  {
+    "prompt": "The bird in flight looks sharp, but the wings are slightly motion-blurred. To make everything perfectly still, what should you do to the shutter speed?",
+    "options": ["Increase", "Decrease"],
+    "answer": "Increase",
+    "image": "quiz_shutter5.jpg"
+  },
+
+  {
+    "prompt": "You're photographing a concert indoors with dim lighting, and your images are too dark even with a wide aperture and slow shutter speed. What's the best adjustment to ISO?",
+    "options": ["Increase", "Decrease"],
+    "answer": "Increase",
+    "image": "quiz_iso1.jpg"
+  },
+  {
+    "prompt": "You're shooting outdoors on a bright sunny day, and the photo looks washed out and overly bright. What should you do to the ISO setting?",
+    "options": ["Increase", "Decrease"],
+    "answer": "Decrease",
+    "image": "quiz_iso2.jpg"
+  },
+  {
+    "prompt": "You’re taking pictures in a museum where flash photography is not allowed, and the lighting is low. What should you do to the ISO setting?",
+    "options": ["Increase", "Decrease"],
+    "answer": "Increase",
+    "image": "quiz_iso3.jpg"
+  },
+  {
+    "prompt": "You're experimenting with night sky photography using long exposures and a tripod. What ISO would give you a cleaner result?",
+    "options": ["Increase", "Decrease"],
+    "answer": "Decrease",
+    "image": "quiz_iso4.jpg"
+  },
+  {
+    "prompt": "Your indoor house photo looks too dark, and you don’t want to change shutter speed or aperture. What should you do to the ISO setting?",
+    "options": ["Increase", "Decrease"],
+    "answer": "Increase",
+    "image": "quiz_iso5.jpg"
+  },
+
+  {
+    "prompt": "The background is very blurry, and only the subject is in focus. To bring more of the background into focus, what should you do to the aperture?",
+    "options": ["Increase", "Decrease"],
+    "answer": "Decrease",
+    "image": "quiz_aperture1.jpg"
+  },
+  {
+    "prompt": "In a landscape photo, the mountains in the distance are blurry. You want everything from front to back to be sharp. What should you do to the aperture?",
+    "options": ["Increase", "Decrease"],
+    "answer": "Decrease",
+    "image": "quiz_aperture2.jpg"
+  },
+  {
+    "prompt": "The portrait looks too flat because both the subject and background are in focus. To blur the background more, what should you do to the aperture?",
+    "options": ["Increase", "Decrease"],
+    "answer": "Increase",
+    "image": "quiz_aperture3.jpg"
+  },
+  {
+    "prompt": "You want a shallow depth of field for a dramatic flower close‑up. How should you adjust the aperture to achieve this?",
+    "options": ["Increase", "Decrease"],
+    "answer": "Increase",
+    "image": "quiz_aperture4.jpg"
+  },
+  {
+    "prompt": "You're shooting a group photo and want everyone, from the front row to the back, to be in sharp focus. What should you do to the aperture?",
+    "options": ["Increase", "Decrease"],
+    "answer": "Decrease",
+    "image": "quiz_aperture5.jpg"
+  }
+]

@@ -1,5 +1,6 @@
-from flask import Flask, render_template, request, redirect, url_for, jsonify
+from flask import Flask, render_template, request, redirect, url_for, jsonify, session
 import json
+import os
 from datetime import datetime
 
 app = Flask(__name__)
@@ -11,7 +12,7 @@ with open("data/quiz.json") as f:
 	quiz = json.load(f)
 
 user_log = []
-
+app.secret_key = os.urandom(24)
 @app.route("/")
 def home():
 	log_event("Entered home page")
@@ -39,20 +40,40 @@ def learn(topic):
 	log_event(f"Entered lesson: {topic}")
 	return render_template("learn.html", lesson=lesson, lesson_id=lesson_id, topic=topic)
 
+
 @app.route("/quiz/<int:question_id>", methods=["GET", "POST"])
 def quiz_page(question_id):
-	if request.method == "POST":
-		answer = request.form.get("answer")
-		log_event(f"Answered question {question_id} with {answer}")
-	if question_id < 1 or question_id > len(quiz):
-		return redirect(url_for("result"))
-	question = quiz[question_id - 1]
-	return render_template("quiz.html", question=question, question_id=question_id)
+    if "answers" not in session:
+        session["answers"] = []
+
+    if request.method == "POST":
+        answer = request.form.get("answer")
+        log_event(f"Answered question {question_id} with {answer}")
+        session["answers"].append(answer)
+        session.modified = True
+
+        if question_id < len(quiz):
+            return redirect(url_for("quiz_page", question_id=question_id + 1))
+        else:
+            return redirect(url_for("result"))
+
+    if question_id < 1 or question_id > len(quiz):
+        return redirect(url_for("quiz_page", question_id=1))
+    question = quiz[question_id - 1]
+    return render_template("quiz.html", question=question, question_id=question_id, total=len(quiz))
+
 
 @app.route("/result")
 def result():
-	log_event("Reached quiz result page")
-	return render_template("result.html")
+    log_event("Reached quiz result page")
+    answers = session.get("answers", [])
+    score = sum(
+        1 for idx, user_ans in enumerate(answers)
+        if idx < len(quiz) and user_ans == quiz[idx]["answer"]
+    )
+    total = len(quiz)
+    session.pop("answers", None)
+    return render_template("result.html", score=score, total=total)
 
 @app.route("/log_event", methods=["POST"])
 def log_event_api():
