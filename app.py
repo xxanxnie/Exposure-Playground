@@ -69,7 +69,7 @@ def quiz_page(question_id):
 
 @app.route("/result")
 def result():
-	# log_event("Reached quiz result page")
+    log_event("Reached quiz result page")
     answers = session.get("answers", [])
     all_questions = []
 
