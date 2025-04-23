@@ -1,3 +1,42 @@
+function updateCameraScreen(content) {
+    console.log('Updating camera screen with content:', content);
+    const cameraScreen = $('#camera-screen');
+    cameraScreen.empty(); // Clear the current content
+
+    // Add the background image
+    const backgroundImage = $('<img>').attr('src', content.background.src).attr('alt', content.background.alt).addClass('camera-screen-img');
+    cameraScreen.append(backgroundImage);
+
+    // Add the title as an <h> element
+    const title = $('<h>').text(content.title).addClass('camera-screen-title');
+    cameraScreen.append(title);
+
+    // Add a <div> for the content
+    const contentDiv = $('<div>').addClass('camera-screen-text');
+    // Loop through the content array and add elements based on type
+    content.content.forEach(item => {
+        if (item.type === 'text') {
+            // Add text content in a <p> block
+            const textElement = $('<p>').text(item.content);
+            contentDiv.append(textElement);
+        }
+    });
+    cameraScreen.append(contentDiv);
+}
+
+function ajaxRequest(url) {
+    $.ajax({
+        url: url,
+        method: 'GET',
+        success: function (response) {
+            updateCameraScreen(response);
+        },
+        error: function (xhr, status, error) {
+            console.error('Error fetching content:', error);
+        }
+    });
+}
+
 $(document).ready(function () {
     // Initialize the counter
     let counter = 0;
@@ -8,24 +47,42 @@ $(document).ready(function () {
         const audio = new Audio('/static/sounds/shutter_sound.mp3');
         audio.play();
 
-        // Increment the counter
-        counter++;
-        console.log('Counter:', counter);
+        if (counter <= numberOfPages) {
+            // Increment the counter
+            counter++;
+            console.log('Counter:', counter);
+            if (counter <= numberOfPages) {
+                // Make an AJAX request to the backend
+                url = topic + '/' + counter;
+                ajaxRequest(url);
+            } else {
+                // Show a message saying reaching the end of the content
+                $('#camera-screen').empty(); // Clear the current content
+                $('#camera-screen-default .camera-screen-text').empty();
+                $('#camera-screen-default .camera-screen-text').append('<p>You have reached the end of the content.</p>');
+            }
+        }
+    });
 
-        // Make an AJAX request to the backend
-        // $.ajax({
-        //     url: '/get-content', // Replace with the correct backend endpoint
-        //     method: 'POST',
-        //     contentType: 'application/json',
-        //     data: JSON.stringify({ counter: counter, lesson_id: lessonId }),
-        //     success: function (response) {
-        //         // Handle the response (e.g., update the page with new content)
-        //         console.log('Content received:', response);
-        //         $('#content-container').html(response.content); // Update a container with the new content
-        //     },
-        //     error: function (xhr, status, error) {
-        //         console.error('Error fetching content:', error);
-        //     }
-        // });
+    $('#camera-playback-button').on('click', function () {
+        // Play a sound
+        const audio = new Audio('/static/sounds/playback_button_sound.mp3');
+        audio.play();
+
+        if (counter > 0) {
+            // Decrease the counter
+            counter--;
+            console.log('Counter:', counter);
+            if (counter > 0) {
+                // Make an AJAX request to the backend
+                url = topic + '/' + counter;
+                ajaxRequest(url);
+            } else {
+                // TODO: Show a message saying reaching the beginning of the content
+                $('#camera-screen').empty(); // Clear the current content
+                $('#camera-screen-default .camera-screen-text').empty();
+                $('#camera-screen-default .camera-screen-text').append('<p>You have reached the beginning of the content.</p>');
+            }   
+        }
     });
 });

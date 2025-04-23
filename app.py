@@ -33,14 +33,33 @@ def learn(topic):
 	}
 
 	if topic not in topic_map:
-		# TODO include some kind of error message
+		# TODO include some kind of error message?
 		return redirect(url_for("home"))
 
-	lesson_id = topic_map[topic] + 1
-	lesson = lessons[topic_map[topic]]
+	title = lessons[topic_map[topic]]['title']
+	description = lessons[topic_map[topic]]['description']
+	number_of_pages = len(lessons[topic_map[topic]]['pages'])
 	log_event(f"Entered lesson: {topic}")
-	return render_template("learn.html", lesson=lesson, lesson_id=lesson_id, topic=topic)
+	return render_template("learn.html", title=title, description=description, topic=topic, number_of_pages=number_of_pages)
 
+@app.route("/learn/<topic>/<page>")
+def learn_page(topic, page):
+	topic = topic.lower()
+	topic_map = {
+		"iso": 0,
+		"shutter": 1,
+		"aperture": 2
+	}
+
+	if topic not in topic_map:
+		return jsonify({"error": "Invalid topic"}), 404
+	
+	if page not in lessons[topic_map[topic]]['pages']:
+		return jsonify({"error": "Page not found"}), 404
+
+	lesson = lessons[topic_map[topic]]['pages'][page]
+	log_event(f"Enter lesson: {topic}, Page: {page}")
+	return jsonify(lesson)
 
 @app.route("/quiz/<int:question_id>", methods=["GET", "POST"])
 def quiz_page(question_id):

@@ -1,5 +1,71 @@
 [
-    {"title": "Learn ISO", "description": "ISO controls the sensitivity to light..."},
-    {"title": "Learn Shutter Speed", "description": "Shutter speed affects motion blur..."},
-    {"title": "Learn Aperture", "description": "Aperture controls depth of field..."}
-  ]
+  {
+    "title": "Learn ISO",
+    "description": "ISO controls the sensitivity to light...",
+    "pages": {
+      "1": {
+        "background": {
+          "type": "image",
+          "src": "/static/images/iso_screen_1.jpg",
+          "alt": "background image"
+        },
+        "title": "What is ISO?",
+        "content": [
+          {
+            "type": "text",
+            "content": "ISO refers to your camera sensor's sensitivity to light."
+          },
+          {
+            "type": "text",
+            "content": "Think of ISO like sunglasses - the higher the ISO, the more \"light-sensitive\" your sensor becomes."
+          }
+        ]
+      }
+    }
+    
+  },
+  {
+    "title": "Learn Shutter Speed",
+    "description": "Shutter speed affects motion blur...",
+    "pages": {
+      "1": {
+        "background": {
+          "type": "image",
+          "src": "/static/images/shutter_speed_screen_1.jpg",
+          "alt": "background image"
+        },
+        "title": "What is Shutter Speed?",
+        "content": [
+          {
+            "type": "text",
+            "content": "Shutter speed refers to how long the camera's shutter is open when taking a photo."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "title": "Learn Aperture",
+    "description": "Aperture controls depth of field...",
+    "pages": {
+      "1": {
+        "background": {
+          "type": "image",
+          "src": "/static/images/aperture_screen_1.jpg",
+          "alt": "background image"
+        },
+        "title": "What is Aperture?",
+        "content": [
+          {
+            "type": "text",
+            "content": "Aperture contorols the size of the opening in the lens."
+          },
+          {
+            "type": "text",
+            "content": "Think of aperture like the eye - the wider the aperture, the wider the opening in the lens."
+          }
+        ]
+      }
+    }
+  }
+]
