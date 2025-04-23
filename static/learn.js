@@ -22,6 +22,9 @@ function updateCameraScreen(content) {
         }
     });
     cameraScreen.append(contentDiv);
+
+    // show camera screen
+    $('#camera-screen').show();
 }
 
 function ajaxRequest(url) {
@@ -60,6 +63,8 @@ $(document).ready(function () {
                 $('#camera-screen').empty(); // Clear the current content
                 $('#camera-screen-default .camera-screen-text').empty();
                 $('#camera-screen-default .camera-screen-text').append('<p>You have reached the end of the content.</p>');
+                $('#camera-screen-default .camera-screen-text').append('<a href="/">Go back to the home page</a>');
+                $('#camera-screen').hide(); // Hide the camera screen
             }
         }
     });
@@ -82,6 +87,7 @@ $(document).ready(function () {
                 $('#camera-screen').empty(); // Clear the current content
                 $('#camera-screen-default .camera-screen-text').empty();
                 $('#camera-screen-default .camera-screen-text').append('<p>You have reached the beginning of the content.</p>');
+                $('#camera-screen').hide(); // Hide the camera screen
             }   
         }
     });
