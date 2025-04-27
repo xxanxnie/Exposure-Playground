@@ -139,33 +139,75 @@ def quiz_aperture(qid):
 
 @app.route("/result_iso", endpoint="result_iso_section")
 def result_iso_section():
+    start, total = 5, 5
     answers = session.get("answers_iso", [])
-    score = sum(1 for i,a in enumerate(answers) if a == quiz[5+i]["answer"])
+    all_questions = []
+    for i in range(total):
+        q = quiz[start + i]
+        user_ans = answers[i] if i < len(answers) else None
+        all_questions.append({
+            "prompt":          q["prompt"],
+            "user_answer":     user_ans,
+            "correct_answer":  q["answer"],
+            "explanation":     q.get("explanation", "")
+        })
+    score = sum(1 for q in all_questions if q["user_answer"] == q["correct_answer"])
     session.pop("answers_iso", None)
-    return render_template("result.html",
-                           score=score,
-                           total=5,
-                           section="ISO")
+    return render_template(
+        "result.html",
+        score=score,
+        total=total,
+        section="ISO",
+        all_questions=all_questions
+    )
 
 @app.route("/result_shutter", endpoint="result_shutter_section")
 def result_shutter_section():
+    start, total = 0, 5
     answers = session.get("answers_shutter", [])
-    score = sum(1 for i,a in enumerate(answers) if a == quiz[0+i]["answer"])
+    all_questions = []
+    for i in range(total):
+        q = quiz[start + i]
+        user_ans = answers[i] if i < len(answers) else None
+        all_questions.append({
+            "prompt":          q["prompt"],
+            "user_answer":     user_ans,
+            "correct_answer":  q["answer"],
+            "explanation":     q.get("explanation", "")
+        })
+    score = sum(1 for q in all_questions if q["user_answer"] == q["correct_answer"])
     session.pop("answers_shutter", None)
-    return render_template("result.html",
-                           score=score,
-                           total=5,
-                           section="Shutter")
+    return render_template(
+        "result.html",
+        score=score,
+        total=total,
+        section="Shutter",
+        all_questions=all_questions
+    )
 
 @app.route("/result_aperture", endpoint="result_aperture_section")
 def result_aperture_section():
+    start, total = 10, 5
     answers = session.get("answers_aperture", [])
-    score = sum(1 for i,a in enumerate(answers) if a == quiz[10+i]["answer"])
+    all_questions = []
+    for i in range(total):
+        q = quiz[start + i]
+        user_ans = answers[i] if i < len(answers) else None
+        all_questions.append({
+            "prompt":          q["prompt"],
+            "user_answer":     user_ans,
+            "correct_answer":  q["answer"],
+            "explanation":     q.get("explanation", "")
+        })
+    score = sum(1 for q in all_questions if q["user_answer"] == q["correct_answer"])
     session.pop("answers_aperture", None)
-    return render_template("result.html",
-                           score=score,
-                           total=5,
-                           section="Aperture")
+    return render_template(
+        "result.html",
+        score=score,
+        total=total,
+        section="Aperture",
+        all_questions=all_questions
+    )
 @app.route("/quiz/<int:question_id>", methods=["GET", "POST"])
 def quiz_page(question_id):
     if question_id == 1:
