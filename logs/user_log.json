@@ -1,10 +1,82 @@
 [
   {
     "event": "Entered home page",
-    "time": "2025-04-27T15:58:31.683875"
+    "time": "2025-04-27T16:12:45.019481"
   },
   {
-    "event": "Visited about page",
-    "time": "2025-04-27T15:59:04.326966"
+    "event": "Answered question 1 with Decrease",
+    "time": "2025-04-27T16:13:05.758362"
+  },
+  {
+    "event": "Answered question 2 with Decrease",
+    "time": "2025-04-27T16:13:06.493483"
+  },
+  {
+    "event": "Answered question 3 with Decrease",
+    "time": "2025-04-27T16:13:07.121500"
+  },
+  {
+    "event": "Answered question 4 with Decrease",
+    "time": "2025-04-27T16:13:07.973935"
+  },
+  {
+    "event": "Answered question 5 with Decrease",
+    "time": "2025-04-27T16:13:08.550024"
+  },
+  {
+    "event": "Answered question 6 with Decrease",
+    "time": "2025-04-27T16:13:09.175532"
+  },
+  {
+    "event": "Answered question 7 with Decrease",
+    "time": "2025-04-27T16:13:09.912400"
+  },
+  {
+    "event": "Answered question 8 with Decrease",
+    "time": "2025-04-27T16:13:10.845630"
+  },
+  {
+    "event": "Answered question 9 with Decrease",
+    "time": "2025-04-27T16:13:11.429034"
+  },
+  {
+    "event": "Answered question 10 with Decrease",
+    "time": "2025-04-27T16:13:11.963888"
+  },
+  {
+    "event": "Answered question 11 with Decrease",
+    "time": "2025-04-27T16:13:12.561012"
+  },
+  {
+    "event": "Answered question 12 with Decrease",
+    "time": "2025-04-27T16:13:13.101756"
+  },
+  {
+    "event": "Answered question 13 with Decrease",
+    "time": "2025-04-27T16:13:13.983387"
+  },
+  {
+    "event": "Answered question 14 with Decrease",
+    "time": "2025-04-27T16:13:14.513849"
+  },
+  {
+    "event": "Answered question 15 with Decrease",
+    "time": "2025-04-27T16:13:15.061571"
+  },
+  {
+    "event": "Reached quiz result page",
+    "time": "2025-04-27T16:13:15.068088"
+  },
+  {
+    "event": "Entered home page",
+    "time": "2025-04-27T16:13:39.906243"
+  },
+  {
+    "event": "Entered lesson: shutter",
+    "time": "2025-04-27T16:13:41.127417"
+  },
+  {
+    "event": "Entered home page",
+    "time": "2025-04-27T16:13:41.823294"
   }
 ]
