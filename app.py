@@ -61,6 +61,111 @@ def learn_page(topic, page):
 	log_event(f"Enter lesson: {topic}, Page: {page}")
 	return jsonify(lesson)
 
+
+SECTION_MAP = {
+    "shutter":  (0, 5),
+    "iso":      (5, 10),
+    "aperture": (10, 15)
+}
+
+@app.route("/quiz")
+def quiz_overview():
+    return render_template("quiz_overview.html")
+
+
+
+@app.route("/quiz_iso/<int:qid>", endpoint="quiz_iso_section", methods=["GET","POST"])
+def quiz_iso_section(qid):
+    start, total = 5, 5
+    if qid == 1:
+        session["answers_iso"] = []
+    if request.method == "POST":
+        ans = request.form.get("answer")
+        session["answers_iso"].append(ans)
+        session.modified = True
+        if qid < total:
+            return redirect(url_for("quiz_iso_section", qid=qid+1))
+        else:
+            return redirect(url_for("result_iso_section"))
+    if qid < 1 or qid > total:
+        return redirect(url_for("quiz_iso_section", qid=1))
+    question = quiz[start + qid - 1]
+    return render_template("quiz.html",
+                           question=question,
+                           question_id=qid,
+                           total=total)
+
+@app.route("/quiz_shutter/<int:qid>", endpoint="quiz_shutter_section", methods=["GET","POST"])
+def quiz_shutter(qid):
+    start, total = 0, 5
+    if qid == 1:
+        session["answers_shutter"] = []
+    if request.method == "POST":
+        ans = request.form.get("answer")
+        session["answers_shutter"].append(ans)
+        session.modified = True
+        if qid < total:
+            return redirect(url_for("quiz_shutter_section", qid=qid+1))
+        else:
+            return redirect(url_for("result_shutter_section"))
+    if qid < 1 or qid > total:
+        return redirect(url_for("quiz_shutter_section", qid=1))
+    question = quiz[start + qid - 1]
+    return render_template("quiz.html",
+                           question=question,
+                           question_id=qid,
+                           total=total)
+
+@app.route("/quiz_aperture/<int:qid>",endpoint="quiz_aperture_section", methods=["GET","POST"])
+def quiz_aperture(qid):
+    start, total = 10, 5
+    if qid == 1:
+        session["answers_aperture"] = []
+    if request.method == "POST":
+        ans = request.form.get("answer")
+        session["answers_aperture"].append(ans)
+        session.modified = True
+        if qid < total:
+            return redirect(url_for("quiz_aperture_section", qid=qid+1))
+        else:
+            return redirect(url_for("result_aperture_section"))
+    if qid < 1 or qid > total:
+        return redirect(url_for("quiz_aperture_section", qid=1))
+    question = quiz[start + qid - 1]
+    return render_template("quiz.html",
+                           question=question,
+                           question_id=qid,
+                           total=total)
+
+@app.route("/result_iso", endpoint="result_iso_section")
+def result_iso_section():
+    answers = session.get("answers_iso", [])
+    score = sum(1 for i,a in enumerate(answers) if a == quiz[5+i]["answer"])
+    session.pop("answers_iso", None)
+    return render_template("result.html",
+                           score=score,
+                           total=5,
+                           section="ISO")
+
+@app.route("/result_shutter", endpoint="result_shutter_section")
+def result_shutter_section():
+    answers = session.get("answers_shutter", [])
+    score = sum(1 for i,a in enumerate(answers) if a == quiz[0+i]["answer"])
+    session.pop("answers_shutter", None)
+    return render_template("result.html",
+                           score=score,
+                           total=5,
+                           section="Shutter")
+
+@app.route("/result_aperture", endpoint="result_aperture_section")
+def result_aperture_section():
+    answers = session.get("answers_aperture", [])
+    score = sum(1 for i,a in enumerate(answers) if a == quiz[10+i]["answer"])
+    session.pop("answers_aperture", None)
+    return render_template("result.html",
+                           score=score,
+                           total=5,
+                           section="Aperture")
 @app.route("/quiz/<int:question_id>", methods=["GET", "POST"])
 def quiz_page(question_id):
     if question_id == 1:

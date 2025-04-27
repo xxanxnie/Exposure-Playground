@@ -31,7 +31,8 @@
       alt="Quiz {{ question_id }}">
 
     <h3 class="mb-4">Question {{ question_id }}: {{ question.prompt }}</h3>
-    <form method="post" action="{{ url_for('quiz_page', question_id=question_id) }}" class="text-center">
+{#    <form method="post" action="{{ url_for('quiz_page', question_id=question_id) }}" class="text-center">#}
+    <form method="post" action="{{ request.path }}" class="text-center">
       {% for option in question.options %}
       <div class="form-check">
         <input class="form-check-input" type="radio" name="answer" id="opt{{ loop.index }}" value="{{ option }}"
