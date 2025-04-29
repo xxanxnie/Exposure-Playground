@@ -9,6 +9,30 @@
         .question-summary a {
             width: 50px;
         }
+
+        .accordion {
+            border-top: none !important;
+        }
+
+        .accordion-item {
+            border: none !important;
+        }
+
+        .accordion-header {
+            margin: 0 !important;
+            padding: 0 !important;
+            border: none !important;
+        }
+
+        .accordion-button {
+            display: none;
+        }
+
+        .accordion-body {
+            border: 1px solid #dee2e6;
+            border-radius: 0.5rem;
+            padding: 1rem;
+        }
     </style>
 </head>
 
@@ -20,9 +44,17 @@
         <p class="lead">Your score: <strong>{{ score }} / {{ total }}</strong></p>
 
         <div class="mt-4 d-flex flex-column align-items-center gap-2">
-            <a class="btn btn-primary w-40" href="/quiz/1">🔁 Retry Full Quiz</a>
-            <a class="btn btn-outline-info w-40" href="/about">📚 Want to Learn More?</a>
-            <a class="btn btn-secondary w-40" href="/">Return to Home</a>
+            {% if section == "ISO" %}
+            <a class="btn btn-primary w-40" href="/quiz_iso/1">Try Again!</a>
+            {% elif section == "Aperture" %}
+            <a class="btn btn-primary w-40" href="/quiz_aperture/1">Try Again!</a>
+            {% elif section == "Shutter" %}
+            <a class="btn btn-primary w-40" href="/quiz_shutter/1">Try Again!</a>
+            {% else %}
+            <a class="btn btn-primary w-40" href="/quiz/1">Try Again!</a>
+            {% endif %}
+
+            <a class="btn btn-outline-info w-40" href="/about">Learn More</a>
         </div>
     </div>
 
@@ -35,43 +67,25 @@
               btn-success
             {% else %}
               btn-danger
-            {% endif %}">
+            {% endif %}" data-bs-toggle="collapse" data-bs-target="#collapse{{ loop.index }}" aria-expanded="false"
+                aria-controls="collapse{{ loop.index }}">
                 Q{{ loop.index }}
             </a>
             {% endfor %}
         </div>
-    </div>
-
-    <div class="container mt-5 text-start">
-        <div class="d-flex justify-content-between align-items-center">
-            <h4 class="mb-0">🔍 Detailed Review</h4>
-            <button class="btn btn-outline-dark btn-sm" type="button" data-bs-toggle="collapse"
-                data-bs-target="#reviewCollapse" aria-expanded="false" aria-controls="reviewCollapse">
-                Show / Hide All
-            </button>
-        </div>
-
-        <div class="collapse mt-3" id="reviewCollapse">
-            <ul class="list-group mt-3">
-                {% for item in all_questions %}
-                <li class="list-group-item">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <h5 id="q{{ loop.index }}">
-                            Q{{ loop.index }}
-                            {% if item.user_answer == item.correct_answer %}
-                            <span class="text-success">✅ Correct</span>
-                            {% else %}
-                            <span class="text-danger">❌ Incorrect</span>
-                            {% endif %}
-                        </h5>
-                        <button class="btn btn-sm btn-outline-secondary" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapse{{ loop.index }}" aria-expanded="false"
-                            aria-controls="collapse{{ loop.index }}">
-                            📖 View
-                        </button>
-                    </div>
-
-                    <div class="collapse mt-2" id="collapse{{ loop.index }}">
+        <div class="answer-details mt-3 accordion" id="answerAccordion">
+            {% for item in all_questions %}
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading{{ loop.index }}">
+                    <button class="accordion-button collapsed d-none" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapse{{ loop.index }}" aria-expanded="false"
+                        aria-controls="collapse{{ loop.index }}">
+                        Q{{ loop.index }}
+                    </button>
+                </h2>
+                <div id="collapse{{ loop.index }}" class="accordion-collapse collapse"
+                    aria-labelledby="heading{{ loop.index }}" data-bs-parent="#answerAccordion">
+                    <div class="accordion-body text-start">
                         <p><strong>{{ item.prompt }}</strong></p>
                         <p>Your answer: <strong>{{ item.user_answer }}</strong> |
                             Correct answer: <strong>{{ item.correct_answer }}</strong></p>
@@ -79,9 +93,9 @@
                         <div><em>Explanation:</em> {{ item.explanation }}</div>
                         {% endif %}
                     </div>
-                </li>
-                {% endfor %}
-            </ul>
+                </div>
+            </div>
+            {% endfor %}
         </div>
     </div>
 

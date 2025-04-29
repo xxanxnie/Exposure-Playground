@@ -1,82 +1,94 @@
 [
   {
+    "event": "Visited learn overview page",
+    "time": "2025-04-29T17:02:19.091580"
+  },
+  {
+    "event": "Entered lesson: iso",
+    "time": "2025-04-29T17:02:20.296991"
+  },
+  {
+    "event": "Visited about page",
+    "time": "2025-04-29T17:04:46.533751"
+  },
+  {
+    "event": "Visited learn overview page",
+    "time": "2025-04-29T17:06:31.712488"
+  },
+  {
+    "event": "Visited learn overview page",
+    "time": "2025-04-29T17:10:31.912781"
+  },
+  {
+    "event": "Visited learn overview page",
+    "time": "2025-04-29T17:19:05.914960"
+  },
+  {
     "event": "Entered home page",
-    "time": "2025-04-27T16:12:45.019481"
+    "time": "2025-04-29T17:19:07.079125"
   },
   {
-    "event": "Answered question 1 with Decrease",
-    "time": "2025-04-27T16:13:05.758362"
+    "event": "Answered question 1 with Increase",
+    "time": "2025-04-29T17:19:12.210263"
   },
   {
-    "event": "Answered question 2 with Decrease",
-    "time": "2025-04-27T16:13:06.493483"
+    "event": "Answered question 2 with Increase",
+    "time": "2025-04-29T17:19:13.328670"
   },
   {
-    "event": "Answered question 3 with Decrease",
-    "time": "2025-04-27T16:13:07.121500"
+    "event": "Answered question 3 with Increase",
+    "time": "2025-04-29T17:19:14.661537"
   },
   {
-    "event": "Answered question 4 with Decrease",
-    "time": "2025-04-27T16:13:07.973935"
+    "event": "Answered question 4 with Increase",
+    "time": "2025-04-29T17:19:16.122743"
   },
   {
-    "event": "Answered question 5 with Decrease",
-    "time": "2025-04-27T16:13:08.550024"
+    "event": "Answered question 5 with Increase",
+    "time": "2025-04-29T17:19:18.015163"
   },
   {
-    "event": "Answered question 6 with Decrease",
-    "time": "2025-04-27T16:13:09.175532"
+    "event": "Answered question 6 with Increase",
+    "time": "2025-04-29T17:19:19.042708"
   },
   {
-    "event": "Answered question 7 with Decrease",
-    "time": "2025-04-27T16:13:09.912400"
+    "event": "Answered question 7 with Increase",
+    "time": "2025-04-29T17:19:20.312104"
   },
   {
-    "event": "Answered question 8 with Decrease",
-    "time": "2025-04-27T16:13:10.845630"
+    "event": "Answered question 8 with Increase",
+    "time": "2025-04-29T17:19:21.413484"
   },
   {
-    "event": "Answered question 9 with Decrease",
-    "time": "2025-04-27T16:13:11.429034"
+    "event": "Answered question 9 with Increase",
+    "time": "2025-04-29T17:19:22.497527"
   },
   {
-    "event": "Answered question 10 with Decrease",
-    "time": "2025-04-27T16:13:11.963888"
+    "event": "Answered question 10 with Increase",
+    "time": "2025-04-29T17:19:23.531623"
   },
   {
-    "event": "Answered question 11 with Decrease",
-    "time": "2025-04-27T16:13:12.561012"
+    "event": "Answered question 11 with Increase",
+    "time": "2025-04-29T17:19:24.611707"
   },
   {
-    "event": "Answered question 12 with Decrease",
-    "time": "2025-04-27T16:13:13.101756"
+    "event": "Answered question 12 with Increase",
+    "time": "2025-04-29T17:19:25.792427"
   },
   {
-    "event": "Answered question 13 with Decrease",
-    "time": "2025-04-27T16:13:13.983387"
+    "event": "Answered question 13 with Increase",
+    "time": "2025-04-29T17:19:26.881666"
   },
   {
-    "event": "Answered question 14 with Decrease",
-    "time": "2025-04-27T16:13:14.513849"
+    "event": "Answered question 14 with Increase",
+    "time": "2025-04-29T17:19:28.007253"
   },
   {
-    "event": "Answered question 15 with Decrease",
-    "time": "2025-04-27T16:13:15.061571"
+    "event": "Answered question 15 with Increase",
+    "time": "2025-04-29T17:19:29.173082"
   },
   {
     "event": "Reached quiz result page",
-    "time": "2025-04-27T16:13:15.068088"
-  },
-  {
-    "event": "Entered home page",
-    "time": "2025-04-27T16:13:39.906243"
-  },
-  {
-    "event": "Entered lesson: shutter",
-    "time": "2025-04-27T16:13:41.127417"
-  },
-  {
-    "event": "Entered home page",
-    "time": "2025-04-27T16:13:41.823294"
+    "time": "2025-04-29T17:19:29.181732"
   }
 ]
