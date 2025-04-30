@@ -1,94 +1,42 @@
 [
   {
-    "event": "Visited learn overview page",
-    "time": "2025-04-29T17:02:19.091580"
-  },
-  {
-    "event": "Entered lesson: iso",
-    "time": "2025-04-29T17:02:20.296991"
-  },
-  {
-    "event": "Visited about page",
-    "time": "2025-04-29T17:04:46.533751"
-  },
-  {
-    "event": "Visited learn overview page",
-    "time": "2025-04-29T17:06:31.712488"
-  },
-  {
-    "event": "Visited learn overview page",
-    "time": "2025-04-29T17:10:31.912781"
-  },
-  {
-    "event": "Visited learn overview page",
-    "time": "2025-04-29T17:19:05.914960"
+    "event": "Entered home page",
+    "time": "2025-04-29T20:01:15.118692"
   },
   {
     "event": "Entered home page",
-    "time": "2025-04-29T17:19:07.079125"
+    "time": "2025-04-29T20:07:43.662097"
   },
   {
-    "event": "Answered question 1 with Increase",
-    "time": "2025-04-29T17:19:12.210263"
+    "event": "Entered home page",
+    "time": "2025-04-29T20:13:02.328260"
   },
   {
-    "event": "Answered question 2 with Increase",
-    "time": "2025-04-29T17:19:13.328670"
+    "event": "Entered home page",
+    "time": "2025-04-29T20:19:05.904597"
   },
   {
-    "event": "Answered question 3 with Increase",
-    "time": "2025-04-29T17:19:14.661537"
+    "event": "Visited learn overview page",
+    "time": "2025-04-29T20:19:07.191953"
   },
   {
-    "event": "Answered question 4 with Increase",
-    "time": "2025-04-29T17:19:16.122743"
+    "event": "Visited about page",
+    "time": "2025-04-29T20:19:14.479642"
   },
   {
-    "event": "Answered question 5 with Increase",
-    "time": "2025-04-29T17:19:18.015163"
+    "event": "Visited about page",
+    "time": "2025-04-29T20:25:42.214479"
   },
   {
-    "event": "Answered question 6 with Increase",
-    "time": "2025-04-29T17:19:19.042708"
+    "event": "Visited learn overview page",
+    "time": "2025-04-29T20:38:42.358380"
   },
   {
-    "event": "Answered question 7 with Increase",
-    "time": "2025-04-29T17:19:20.312104"
+    "event": "Entered lesson: shutter",
+    "time": "2025-04-29T20:38:44.559823"
   },
   {
-    "event": "Answered question 8 with Increase",
-    "time": "2025-04-29T17:19:21.413484"
-  },
-  {
-    "event": "Answered question 9 with Increase",
-    "time": "2025-04-29T17:19:22.497527"
-  },
-  {
-    "event": "Answered question 10 with Increase",
-    "time": "2025-04-29T17:19:23.531623"
-  },
-  {
-    "event": "Answered question 11 with Increase",
-    "time": "2025-04-29T17:19:24.611707"
-  },
-  {
-    "event": "Answered question 12 with Increase",
-    "time": "2025-04-29T17:19:25.792427"
-  },
-  {
-    "event": "Answered question 13 with Increase",
-    "time": "2025-04-29T17:19:26.881666"
-  },
-  {
-    "event": "Answered question 14 with Increase",
-    "time": "2025-04-29T17:19:28.007253"
-  },
-  {
-    "event": "Answered question 15 with Increase",
-    "time": "2025-04-29T17:19:29.173082"
-  },
-  {
-    "event": "Reached quiz result page",
-    "time": "2025-04-29T17:19:29.181732"
+    "event": "Visited learn overview page",
+    "time": "2025-04-29T20:42:00.621790"
   }
 ]

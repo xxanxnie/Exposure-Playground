@@ -1,3 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+
+:root {
+    --accent-color: #0F95B0;
+    --base-color: #E3F9FD;
+    --light-grey: #f0f0f0;
+    --dark-grey: #555555;
+}
+
+body {
+    background-color: var(--base-color);
+    color: var(--dark-grey);
+    font-family: 'Merriweather', serif;
+}
+
+.btn-primary {
+    background-color: var(--light-grey);
+    color: var(--accent-color);
+    border: 1.5px solid var(--accent-color);
+    font-weight: bold;
+    padding: 0.5rem 1.2rem;
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-primary:hover {
+    background-color: #0c7a91; 
+    border-color: #0c7a91;
+}
+
+.navbar a {
+    color: var(--dark-grey);
+}
+
+.navbar a:hover {
+    color: var(--accent-color);
+}
+
+
+.accordion-body {
+    background-color: var(--light-grey);
+}
+
+
 /* Global styles */
 .page-wrapper {
     padding-top: 20px;
