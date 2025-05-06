@@ -5,6 +5,19 @@
 	<title>About | Exposure Playground</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+	<style>
+	  .learn-card {
+	    background-color: #eaf6fb; 
+	    border: 1px solid #d0e3ec;
+	    border-radius: 0.75rem;
+	    padding: 1.5rem;
+	    box-shadow: none;
+	  }
+	  .section-divider {
+	    border-top: 2px solid #dee2e6;
+	    margin: 3rem 0;
+	  }
+	</style>
 </head>
 <body>
 	{% include "navbar.html" %}
@@ -17,34 +30,40 @@
 			helps you understand how these core concepts work together to affect image exposure.
 		</p>
 
-		<hr class="my-4">
+		<hr class="section-divider">
 
 		<h4 class="mt-5">📚 What You'll Learn</h4>
 		<div class="row mt-3">
-			<div class="col-md-4">
-				<h5>ISO</h5>
-				<p>
-					ISO determines how sensitive your camera sensor is to light. A low ISO (like 100) is best for bright conditions and delivers clean images,
-					while a high ISO (like 3200+) allows for shooting in low light but introduces noise.
-				</p>
-			</div>
-			<div class="col-md-4">
-				<h5>Shutter Speed</h5>
-				<p>
-					Shutter speed controls how long your camera's shutter remains open. Fast speeds (1/1000s) freeze motion; slower speeds (1/30s) create motion blur
-					and allow more light in — useful in low-light or creative effects.
-				</p>
-			</div>
-			<div class="col-md-4">
-				<h5>Aperture</h5>
-				<p>
-					Aperture adjusts the size of your lens opening. A wide aperture (f/1.8) blurs the background for portraits; a narrow one (f/11) keeps more of the scene sharp —
-					perfect for landscapes.
-				</p>
-			</div>
+		  <div class="col-md-4 mb-3">
+		    <div class="learn-card h-100">
+		      <h5>ISO</h5>
+		      <p>
+		        ISO determines how sensitive your camera sensor is to light. A low ISO (like 100) is best for bright conditions and delivers clean images,
+		        while a high ISO (like 3200+) allows for shooting in low light but introduces noise.
+		      </p>
+		    </div>
+		  </div>
+		  <div class="col-md-4 mb-3">
+		    <div class="learn-card h-100">
+		      <h5>Shutter Speed</h5>
+		      <p>
+		        Shutter speed controls how long your camera's shutter remains open. Fast speeds (1/1000s) freeze motion; slower speeds (1/30s) create motion blur
+		        and allow more light in — useful in low-light or creative effects.
+		      </p>
+		    </div>
+		  </div>
+		  <div class="col-md-4 mb-3">
+		    <div class="learn-card h-100">
+		      <h5>Aperture</h5>
+		      <p>
+		        Aperture adjusts the size of your lens opening. A wide aperture (f/1.8) blurs the background for portraits; a narrow one (f/11) keeps more of the scene sharp —
+		        perfect for landscapes.
+		      </p>
+		    </div>
+		  </div>
 		</div>
 
-		<hr class="my-4">
+		<hr class="section-divider">
 
 		<h4 class="mt-5">📷 Recommended Beginner Cameras</h4>
 		<ul>
@@ -54,7 +73,7 @@
 			<li><strong>Fujifilm X-T30 II</strong> – Stylish and beginner-friendly mirrorless with great color science.</li>
 		</ul>
 
-		<hr class="my-4">
+		<hr class="section-divider">
 
 		<h4 class="mt-5">🔗 Additional Resources</h4>
 		<ul>
