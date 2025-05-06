@@ -11,46 +11,56 @@
 <body>
   {% include "navbar.html" %}
 
-  <div class="container mt-5">
-    <h2 class="mb-4 text-center">Choose a Quiz</h2>
-    <div class="row text-center">
+  <div class="container py-5">
+    <h2 class="mb-5 text-center">Choose a Quiz</h2>
+
+    <div class="row justify-content-around mb-4">
       <!-- Full Quiz -->
-      <div class="col-md-3 mb-4">
-        <div class="card shadow-sm h-100">
+      <div class="col-md-5 mb-4">
+        <div class="card shadow-sm h-100 text-center">
           <div class="card-body">
-            <h5 class="card-title">Full Quiz</h5>
+            <img src="{{ url_for('static', filename='images/quiz_overview_camera.png') }}" alt="Full Quiz Icon" class="mb-3" style="width: 70px; height: auto;">
+            <h5 class="card-title fw-bold">Full Quiz</h5>
             <p class="card-text">All 15 questions</p>
-            <a href="/quiz/1" class="btn btn-primary">Start Full Quiz</a>
+            <a href="/quiz/1" class="btn btn-primary mt-2">Start Full Quiz</a>
           </div>
         </div>
       </div>
+
       <!-- ISO Quiz -->
-      <div class="col-md-3 mb-4">
-        <div class="card shadow-sm h-100">
+      <div class="col-md-5 mb-4">
+        <div class="card shadow-sm h-100 text-center">
           <div class="card-body">
-            <h5 class="card-title">ISO Quiz</h5>
+            <img src="{{ url_for('static', filename='images/quiz_overview_iso.png') }}" alt="ISO Quiz Icon" class="mb-3" style="width: 70px; height: auto;">
+            <h5 class="card-title fw-bold">ISO Quiz</h5>
             <p class="card-text">5 questions on ISO</p>
-            <a href="/quiz_iso/1" class="btn btn-success">Start ISO Quiz</a>
+            <a href="/quiz_iso/1" class="btn btn-primary mt-2">Start ISO Quiz</a>
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="row justify-content-around">
       <!-- Shutter Quiz -->
-      <div class="col-md-3 mb-4">
-        <div class="card shadow-sm h-100">
+      <div class="col-md-5 mb-4">
+        <div class="card shadow-sm h-100 text-center">
           <div class="card-body">
-            <h5 class="card-title">Shutter Quiz</h5>
+            <img src="{{ url_for('static', filename='images/quiz_overview_shutter.png') }}" alt="Shutter Quiz Icon" class="mb-3" style="width: 70px; height: auto;">
+            <h5 class="card-title fw-bold">Shutter Quiz</h5>
             <p class="card-text">5 questions on Shutter Speed</p>
-            <a href="/quiz_shutter/1" class="btn btn-info">Start Shutter Quiz</a>
+            <a href="/quiz_shutter/1" class="btn btn-primary mt-2">Start Shutter Quiz</a>
           </div>
         </div>
       </div>
+
       <!-- Aperture Quiz -->
-      <div class="col-md-3 mb-4">
-        <div class="card shadow-sm h-100">
+      <div class="col-md-5 mb-4">
+        <div class="card shadow-sm h-100 text-center">
           <div class="card-body">
-            <h5 class="card-title">Aperture Quiz</h5>
+            <img src="{{ url_for('static', filename='images/quiz_overview_aperture.png') }}" alt="Aperture Quiz Icon" class="mb-3" style="width: 70px; height: auto;">
+            <h5 class="card-title fw-bold">Aperture Quiz</h5>
             <p class="card-text">5 questions on Aperture</p>
-            <a href="/quiz_aperture/1" class="btn btn-warning">Start Aperture Quiz</a>
+            <a href="/quiz_aperture/1" class="btn btn-primary mt-2">Start Aperture Quiz</a>
           </div>
         </div>
       </div>
