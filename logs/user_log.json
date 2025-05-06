@@ -1,10 +1,30 @@
 [
   {
     "event": "Entered home page",
-    "time": "2025-05-06T14:02:27.306921"
+    "time": "2025-05-06T16:12:20.495273"
   },
   {
-    "event": "Entered lesson: shutter",
-    "time": "2025-05-06T14:02:37.189391"
+    "event": "Entered lesson: iso",
+    "time": "2025-05-06T16:12:29.593526"
+  },
+  {
+    "event": "Entered home page",
+    "time": "2025-05-06T16:12:34.626827"
+  },
+  {
+    "event": "Entered lesson: iso",
+    "time": "2025-05-06T16:12:37.905865"
+  },
+  {
+    "event": "Visited about page",
+    "time": "2025-05-06T16:12:46.730175"
+  },
+  {
+    "event": "Entered home page",
+    "time": "2025-05-06T16:12:49.751083"
+  },
+  {
+    "event": "Entered home page",
+    "time": "2025-05-06T16:12:54.679076"
   }
 ]
