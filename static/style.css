@@ -75,7 +75,7 @@ body {
 
 .learn-camera-container #red-arrow-instruction-1 {
 	position: absolute;
-	top: 16%;
+	top: 10%;
 	left: 74%;
 	transform: translate(-50%, -50%);
 	font-size: 1.2rem;
@@ -93,7 +93,7 @@ body {
 
 .learn-camera-container #red-arrow-instruction-2 {
 	position: absolute;
-	top: 42%;
+	top: 36%;
 	left: 71%;
 	transform: translate(-50%, -50%);
 	font-size: 1.2rem;
