@@ -1,42 +1,10 @@
 [
   {
     "event": "Entered home page",
-    "time": "2025-04-29T20:01:15.118692"
-  },
-  {
-    "event": "Entered home page",
-    "time": "2025-04-29T20:07:43.662097"
-  },
-  {
-    "event": "Entered home page",
-    "time": "2025-04-29T20:13:02.328260"
-  },
-  {
-    "event": "Entered home page",
-    "time": "2025-04-29T20:19:05.904597"
-  },
-  {
-    "event": "Visited learn overview page",
-    "time": "2025-04-29T20:19:07.191953"
-  },
-  {
-    "event": "Visited about page",
-    "time": "2025-04-29T20:19:14.479642"
-  },
-  {
-    "event": "Visited about page",
-    "time": "2025-04-29T20:25:42.214479"
-  },
-  {
-    "event": "Visited learn overview page",
-    "time": "2025-04-29T20:38:42.358380"
+    "time": "2025-05-06T14:02:27.306921"
   },
   {
     "event": "Entered lesson: shutter",
-    "time": "2025-04-29T20:38:44.559823"
-  },
-  {
-    "event": "Visited learn overview page",
-    "time": "2025-04-29T20:42:00.621790"
+    "time": "2025-05-06T14:02:37.189391"
   }
 ]

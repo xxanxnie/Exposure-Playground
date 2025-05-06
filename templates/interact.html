@@ -5,111 +5,27 @@
 	<title>{{ interaction.title }}</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-	<style>
-		.container {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			gap: 50px;
-		}
-		.camera-wrapper {
-			position: relative;
-		}
-		.camera-img {
-			width: 1100px;
-		}
-		.photo-display {
-			position: absolute;
-			top: 250px;
-			left: 180px;
-			width: 506px;
-			height: 359px;
-			object-fit: cover;
-			pointer-events: none;
-		}
-		.controls {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			font-weight: bold;
-			gap: 20px;
-		}
 
-		.controls .title {
-			font-size: 1.3rem;
-			margin-bottom: 10px;
-		}
-
-		.vertical-bar-wrapper {
-			position: relative;
-			height: 300px;
-			display: flex;
-			align-items: center;
-			justify-content: flex-start;
-		}
-
-		.slider-handle {
-			position: absolute;
-			top: 0;
-			left: 0;
-			transform: translate(-50%, -50%);
-			font-size: 2.5rem;
-			cursor: grab;
-			transition: top 0.15s ease;
-			z-index: 10;
-		}
-
-		.vertical-bar {
-			display: flex;
-			flex-direction: column;
-			justify-content: space-between;
-			height: 100%;
-			border-left: 4px solid #000;
-			padding-left: 30px;
-			gap: 10px;
-			position: relative;
-		}
-
-		.bar-option {
-			cursor: pointer;
-			font-size: 1rem;
-			transition: all 0.2s ease;
-		}
-
-		.bar-option:hover {
-			transform: scale(1.15);
-			font-weight: 700;
-			color: #e67e22;
-		}
-
-		.bar-option.active {
-			font-size: 1.3rem;
-			color: #000;
-			font-weight: 800;
-		}
-
-		
-	</style>
 </head>
 <body>
 
 	{% include "navbar.html" %}
 
-	<div class="container">
-		<div class="camera-wrapper">
-			<img src="{{ url_for('static', filename='images/camera.png') }}" class="camera-img" alt="Camera Body">
+	<div class="interact-container">
+		<div class="interact-camera-wrapper">
+			<img src="{{ url_for('static', filename='images/camera.png') }}" class="interact-camera-img" alt="Camera Body">
 			<img id="photo" src="{{ url_for('static', filename='images/' + 
 			interaction.image_prefix + interaction.options[0]|replace('/', '')|
 			replace('.', '') + '.png') }}"
-			class="photo-display" alt="Camera Display">
+			class="interact-photo-display" alt="Camera Display">
 		</div>
-		<div class="controls">
-			<div class="title">{{ interaction.title }}</div>
-			<div class="vertical-bar-wrapper">
-				<div class="slider-handle" id="handle">📸</div>
-				<div class="vertical-bar" id="bar">
+		<div class="interact-controls">
+			<div class="interact-title">{{ interaction.title }}</div>
+			<div class="interact-vertical-bar-wrapper">
+				<div class="interact-slider-handle" id="handle">📸</div>
+				<div class="interact-vertical-bar" id="bar">
 					{% for opt in interaction.options %}
-						<div class="bar-option" onclick="changeImage('{{ opt }}')" data-value="{{ opt }}">
+						<div class="interact-bar-option" onclick="changeImage('{{ opt }}')" data-value="{{ opt }}">
 							{{ opt }}
 						</div>
 					{% endfor %}
@@ -117,9 +33,10 @@
 			</div>
 		</div>
 	</div>
+	
 
 	<script>
-		const options = Array.from(document.querySelectorAll('.bar-option'));
+		const options = Array.from(document.querySelectorAll('.interact-bar-option'));
 		const handle = document.getElementById('handle');
 		const bar = document.getElementById('bar');
 	

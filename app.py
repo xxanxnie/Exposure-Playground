@@ -63,195 +63,195 @@ def learn_page(topic, page):
 
 
 SECTION_MAP = {
-    "shutter":  (0, 5),
-    "iso":      (5, 10),
-    "aperture": (10, 15)
+	"shutter":  (0, 5),
+	"iso":      (5, 10),
+	"aperture": (10, 15)
 }
 
 @app.route("/quiz")
 def quiz_overview():
-    return render_template("quiz_overview.html")
+	return render_template("quiz_overview.html")
 
 
 
 @app.route("/quiz_iso/<int:qid>", endpoint="quiz_iso_section", methods=["GET","POST"])
 def quiz_iso_section(qid):
-    start, total = 5, 5
-    if qid == 1:
-        session["answers_iso"] = []
-    if request.method == "POST":
-        ans = request.form.get("answer")
-        session["answers_iso"].append(ans)
-        session.modified = True
-        if qid < total:
-            return redirect(url_for("quiz_iso_section", qid=qid+1))
-        else:
-            return redirect(url_for("result_iso_section"))
-    if qid < 1 or qid > total:
-        return redirect(url_for("quiz_iso_section", qid=1))
-    question = quiz[start + qid - 1]
-    return render_template("quiz.html",
-                           question=question,
-                           question_id=qid,
-                           total=total)
+	start, total = 5, 5
+	if qid == 1:
+		session["answers_iso"] = []
+	if request.method == "POST":
+		ans = request.form.get("answer")
+		session["answers_iso"].append(ans)
+		session.modified = True
+		if qid < total:
+			return redirect(url_for("quiz_iso_section", qid=qid+1))
+		else:
+			return redirect(url_for("result_iso_section"))
+	if qid < 1 or qid > total:
+		return redirect(url_for("quiz_iso_section", qid=1))
+	question = quiz[start + qid - 1]
+	return render_template("quiz.html",
+						   question=question,
+						   question_id=qid,
+						   total=total)
 
 @app.route("/quiz_shutter/<int:qid>", endpoint="quiz_shutter_section", methods=["GET","POST"])
 def quiz_shutter(qid):
-    start, total = 0, 5
-    if qid == 1:
-        session["answers_shutter"] = []
-    if request.method == "POST":
-        ans = request.form.get("answer")
-        session["answers_shutter"].append(ans)
-        session.modified = True
-        if qid < total:
-            return redirect(url_for("quiz_shutter_section", qid=qid+1))
-        else:
-            return redirect(url_for("result_shutter_section"))
-    if qid < 1 or qid > total:
-        return redirect(url_for("quiz_shutter_section", qid=1))
-    question = quiz[start + qid - 1]
-    return render_template("quiz.html",
-                           question=question,
-                           question_id=qid,
-                           total=total)
+	start, total = 0, 5
+	if qid == 1:
+		session["answers_shutter"] = []
+	if request.method == "POST":
+		ans = request.form.get("answer")
+		session["answers_shutter"].append(ans)
+		session.modified = True
+		if qid < total:
+			return redirect(url_for("quiz_shutter_section", qid=qid+1))
+		else:
+			return redirect(url_for("result_shutter_section"))
+	if qid < 1 or qid > total:
+		return redirect(url_for("quiz_shutter_section", qid=1))
+	question = quiz[start + qid - 1]
+	return render_template("quiz.html",
+						   question=question,
+						   question_id=qid,
+						   total=total)
 
 @app.route("/quiz_aperture/<int:qid>",endpoint="quiz_aperture_section", methods=["GET","POST"])
 def quiz_aperture(qid):
-    start, total = 10, 5
-    if qid == 1:
-        session["answers_aperture"] = []
-    if request.method == "POST":
-        ans = request.form.get("answer")
-        session["answers_aperture"].append(ans)
-        session.modified = True
-        if qid < total:
-            return redirect(url_for("quiz_aperture_section", qid=qid+1))
-        else:
-            return redirect(url_for("result_aperture_section"))
-    if qid < 1 or qid > total:
-        return redirect(url_for("quiz_aperture_section", qid=1))
-    question = quiz[start + qid - 1]
-    return render_template("quiz.html",
-                           question=question,
-                           question_id=qid,
-                           total=total)
+	start, total = 10, 5
+	if qid == 1:
+		session["answers_aperture"] = []
+	if request.method == "POST":
+		ans = request.form.get("answer")
+		session["answers_aperture"].append(ans)
+		session.modified = True
+		if qid < total:
+			return redirect(url_for("quiz_aperture_section", qid=qid+1))
+		else:
+			return redirect(url_for("result_aperture_section"))
+	if qid < 1 or qid > total:
+		return redirect(url_for("quiz_aperture_section", qid=1))
+	question = quiz[start + qid - 1]
+	return render_template("quiz.html",
+						   question=question,
+						   question_id=qid,
+						   total=total)
 
 @app.route("/result_iso", endpoint="result_iso_section")
 def result_iso_section():
-    start, total = 5, 5
-    answers = session.get("answers_iso", [])
-    all_questions = []
-    for i in range(total):
-        q = quiz[start + i]
-        user_ans = answers[i] if i < len(answers) else None
-        all_questions.append({
-            "prompt":          q["prompt"],
-            "user_answer":     user_ans,
-            "correct_answer":  q["answer"],
-            "explanation":     q.get("explanation", "")
-        })
-    score = sum(1 for q in all_questions if q["user_answer"] == q["correct_answer"])
-    session.pop("answers_iso", None)
-    return render_template(
-        "result.html",
-        score=score,
-        total=total,
-        section="ISO",
-        all_questions=all_questions
-    )
+	start, total = 5, 5
+	answers = session.get("answers_iso", [])
+	all_questions = []
+	for i in range(total):
+		q = quiz[start + i]
+		user_ans = answers[i] if i < len(answers) else None
+		all_questions.append({
+			"prompt":          q["prompt"],
+			"user_answer":     user_ans,
+			"correct_answer":  q["answer"],
+			"explanation":     q.get("explanation", "")
+		})
+	score = sum(1 for q in all_questions if q["user_answer"] == q["correct_answer"])
+	session.pop("answers_iso", None)
+	return render_template(
+		"result.html",
+		score=score,
+		total=total,
+		section="ISO",
+		all_questions=all_questions
+	)
 
 @app.route("/result_shutter", endpoint="result_shutter_section")
 def result_shutter_section():
-    start, total = 0, 5
-    answers = session.get("answers_shutter", [])
-    all_questions = []
-    for i in range(total):
-        q = quiz[start + i]
-        user_ans = answers[i] if i < len(answers) else None
-        all_questions.append({
-            "prompt":          q["prompt"],
-            "user_answer":     user_ans,
-            "correct_answer":  q["answer"],
-            "explanation":     q.get("explanation", "")
-        })
-    score = sum(1 for q in all_questions if q["user_answer"] == q["correct_answer"])
-    session.pop("answers_shutter", None)
-    return render_template(
-        "result.html",
-        score=score,
-        total=total,
-        section="Shutter",
-        all_questions=all_questions
-    )
+	start, total = 0, 5
+	answers = session.get("answers_shutter", [])
+	all_questions = []
+	for i in range(total):
+		q = quiz[start + i]
+		user_ans = answers[i] if i < len(answers) else None
+		all_questions.append({
+			"prompt":          q["prompt"],
+			"user_answer":     user_ans,
+			"correct_answer":  q["answer"],
+			"explanation":     q.get("explanation", "")
+		})
+	score = sum(1 for q in all_questions if q["user_answer"] == q["correct_answer"])
+	session.pop("answers_shutter", None)
+	return render_template(
+		"result.html",
+		score=score,
+		total=total,
+		section="Shutter",
+		all_questions=all_questions
+	)
 
 @app.route("/result_aperture", endpoint="result_aperture_section")
 def result_aperture_section():
-    start, total = 10, 5
-    answers = session.get("answers_aperture", [])
-    all_questions = []
-    for i in range(total):
-        q = quiz[start + i]
-        user_ans = answers[i] if i < len(answers) else None
-        all_questions.append({
-            "prompt":          q["prompt"],
-            "user_answer":     user_ans,
-            "correct_answer":  q["answer"],
-            "explanation":     q.get("explanation", "")
-        })
-    score = sum(1 for q in all_questions if q["user_answer"] == q["correct_answer"])
-    session.pop("answers_aperture", None)
-    return render_template(
-        "result.html",
-        score=score,
-        total=total,
-        section="Aperture",
-        all_questions=all_questions
-    )
+	start, total = 10, 5
+	answers = session.get("answers_aperture", [])
+	all_questions = []
+	for i in range(total):
+		q = quiz[start + i]
+		user_ans = answers[i] if i < len(answers) else None
+		all_questions.append({
+			"prompt":          q["prompt"],
+			"user_answer":     user_ans,
+			"correct_answer":  q["answer"],
+			"explanation":     q.get("explanation", "")
+		})
+	score = sum(1 for q in all_questions if q["user_answer"] == q["correct_answer"])
+	session.pop("answers_aperture", None)
+	return render_template(
+		"result.html",
+		score=score,
+		total=total,
+		section="Aperture",
+		all_questions=all_questions
+	)
 @app.route("/quiz/<int:question_id>", methods=["GET", "POST"])
 def quiz_page(question_id):
-    if question_id == 1:
-        session["answers"] = [] 
-        
-    elif "answers" not in session:
-        session["answers"] = []
+	if question_id == 1:
+		session["answers"] = [] 
+		
+	elif "answers" not in session:
+		session["answers"] = []
 
-    if request.method == "POST":
-        answer = request.form.get("answer")
-        log_event(f"Answered question {question_id} with {answer}")
-        session["answers"].append(answer)
-        session.modified = True
+	if request.method == "POST":
+		answer = request.form.get("answer")
+		log_event(f"Answered question {question_id} with {answer}")
+		session["answers"].append(answer)
+		session.modified = True
 
-        if question_id < len(quiz):
-            return redirect(url_for("quiz_page", question_id=question_id + 1))
-        else:
-            return redirect(url_for("result"))
+		if question_id < len(quiz):
+			return redirect(url_for("quiz_page", question_id=question_id + 1))
+		else:
+			return redirect(url_for("result"))
 
-    if question_id < 1 or question_id > len(quiz):
-        return redirect(url_for("quiz_page", question_id=1))
-    question = quiz[question_id - 1]
-    return render_template("quiz.html", question=question, question_id=question_id, total=len(quiz))
+	if question_id < 1 or question_id > len(quiz):
+		return redirect(url_for("quiz_page", question_id=1))
+	question = quiz[question_id - 1]
+	return render_template("quiz.html", question=question, question_id=question_id, total=len(quiz))
 
 
 @app.route("/result")
 def result():
-    log_event("Reached quiz result page")
-    answers = session.get("answers", [])
-    all_questions = []
+	log_event("Reached quiz result page")
+	answers = session.get("answers", [])
+	all_questions = []
 
-    for idx, q in enumerate(quiz):
-        user_ans = answers[idx] if idx < len(answers) else None
-        all_questions.append({
-            "prompt": q["prompt"],
-            "user_answer": user_ans,
-            "correct_answer": q["answer"],
-            "explanation": q.get("explanation", "")
-        })
+	for idx, q in enumerate(quiz):
+		user_ans = answers[idx] if idx < len(answers) else None
+		all_questions.append({
+			"prompt": q["prompt"],
+			"user_answer": user_ans,
+			"correct_answer": q["answer"],
+			"explanation": q.get("explanation", "")
+		})
 
-    score = sum(1 for q in all_questions if q["user_answer"] == q["correct_answer"])
-    total = len(quiz)
+	score = sum(1 for q in all_questions if q["user_answer"] == q["correct_answer"])
+	total = len(quiz)
 
-    return render_template("result.html", score=score, total=total, all_questions=all_questions)
+	return render_template("result.html", score=score, total=total, all_questions=all_questions)
 
 
 @app.route("/log_event", methods=["POST"])
@@ -270,6 +270,13 @@ def log_event(event):
 def about():
 	log_event("Visited about page")
 	return render_template("about.html")
+
+@app.route("/learn/random")
+def learn_random():
+	import random
+	topics = ["iso", "shutter", "aperture"]
+	return redirect(url_for("learn", topic=random.choice(topics)))
+
 
 @app.route("/interact/<interaction_type>")
 def interact(interaction_type):

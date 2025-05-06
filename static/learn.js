@@ -1,94 +1,127 @@
 function updateCameraScreen(content) {
-    console.log('Updating camera screen with content:', content);
-    const cameraScreen = $('#camera-screen');
-    cameraScreen.empty(); // Clear the current content
+	console.log('Updating camera screen with content:', content);
+	const cameraScreen = $('#camera-screen');
+	cameraScreen.empty(); // Clear the current content
 
-    // Add the background image
-    const backgroundImage = $('<img>').attr('src', content.background.src).attr('alt', content.background.alt).addClass('camera-screen-img');
-    cameraScreen.append(backgroundImage);
+	// Add the background image
+	const backgroundImage = $('<img>')
+		.attr('src', content.background.src)
+		.attr('alt', content.background.alt)
+		.addClass('camera-screen-img');
+	cameraScreen.append(backgroundImage);
 
-    // Add the title as an <h> element
-    const title = $('<h>').text(content.title).addClass('camera-screen-title');
-    cameraScreen.append(title);
+	// Add the title as an <h> element
+	const title = $('<h>').text(content.title).addClass('camera-screen-title');
+	cameraScreen.append(title);
 
-    // Add a <div> for the content
-    const contentDiv = $('<div>').addClass('camera-screen-text');
-    // Loop through the content array and add elements based on type
-    content.content.forEach(item => {
-        if (item.type === 'text') {
-            // Add text content in a <p> block
-            const textElement = $('<p>').text(item.content);
-            contentDiv.append(textElement);
-        }
-    });
-    cameraScreen.append(contentDiv);
+	// Add a <div> for the animated content
+	const contentDiv = $('<div>').addClass('camera-screen-text');
+	cameraScreen.append(contentDiv);
 
-    // show camera screen
-    $('#camera-screen').show();
+	let paragraphIndex = 0;
+
+	function typeParagraph() {
+		if (paragraphIndex >= content.content.length) return;
+
+		const item = content.content[paragraphIndex];
+		if (item.type !== 'text') {
+			paragraphIndex++;
+			typeParagraph();
+			return;
+		}
+
+		const paragraph = $('<p></p>').appendTo(contentDiv);
+		let charIndex = 0;
+		const text = item.content;
+
+		function typeChar() {
+			if (charIndex < text.length) {
+				paragraph.append(text.charAt(charIndex));
+				charIndex++;
+				setTimeout(typeChar, 50); // typing speed, 50 = medium
+			} else {
+				paragraphIndex++;
+				setTimeout(typeParagraph, 300); // delay before next paragraph
+			}
+		}
+
+		typeChar();
+	}
+
+	typeParagraph();
+	$('#camera-screen').show();
 }
 
 function ajaxRequest(url) {
-    $.ajax({
-        url: url,
-        method: 'GET',
-        success: function (response) {
-            updateCameraScreen(response);
-        },
-        error: function (xhr, status, error) {
-            console.error('Error fetching content:', error);
-        }
-    });
+	$.ajax({
+		url: url,
+		method: 'GET',
+		success: function (response) {
+			updateCameraScreen(response);
+		},
+		error: function (xhr, status, error) {
+			console.error('Error fetching content:', error);
+		}
+	});
 }
 
 $(document).ready(function () {
-    // Initialize the counter
-    let counter = 0;
+	let counter = 0;
 
-    // Handle button click event
-    $('#camera-shutter-button').on('click', function () {
-        // Play a sound
-        const audio = new Audio('/static/sounds/shutter_sound.mp3');
-        audio.play();
+	// Handle button click event
+	$('#camera-shutter-button').on('click', function () {
+		// Play sound effect
+		const audio = new Audio('/static/sounds/shutter_sound.mp3');
+		audio.play();
 
-        if (counter <= numberOfPages) {
-            // Increment the counter
-            counter++;
-            console.log('Counter:', counter);
-            if (counter <= numberOfPages) {
-                // Make an AJAX request to the backend
-                url = topic + '/' + counter;
-                ajaxRequest(url);
-            } else {
-                // Show a message saying reaching the end of the content
-                $('#camera-screen').empty(); // Clear the current content
-                $('#camera-screen-default .camera-screen-text').empty();
-                $('#camera-screen-default .camera-screen-text').append('<p>You have reached the end of the content.</p>');
-                $('#camera-screen-default .camera-screen-text').append('<a href="/">Go back to the home page</a>');
-                $('#camera-screen').hide(); // Hide the camera screen
-            }
-        }
-    });
+		if (counter <= numberOfPages) {
+			counter++;
+			console.log('Counter:', counter);
+			if (counter <= numberOfPages) {
+				// Make AJAX request to the backend
+				url = topic + '/' + counter;
+				ajaxRequest(url);
+			} else {
+				// Show a message saying reaching the end of the content
+				$('#camera-screen').empty();
+				$('#camera-screen-default .camera-screen-text').empty();
+				$('#camera-screen-default .camera-screen-text').append('<p class="mb-3">You have reached the end of the content!</p>');
 
-    $('#camera-playback-button').on('click', function () {
-        // Play a sound
-        const audio = new Audio('/static/sounds/playback_button_sound.mp3');
-        audio.play();
 
-        if (counter > 0) {
-            // Decrease the counter
-            counter--;
-            console.log('Counter:', counter);
-            if (counter > 0) {
-                // Make an AJAX request to the backend
-                url = topic + '/' + counter;
-                ajaxRequest(url);
-            } else {
-                // TODO: Show a message saying reaching the beginning of the content
-                $('#camera-screen').empty(); // Clear the current content
-                $('#camera-screen-default .camera-screen-text').empty();
-                $('#camera-screen-default .camera-screen-text').append('<p>You have reached the beginning of the content.</p>');
-                $('#camera-screen').hide(); // Hide the camera screen
-            }   
-        }
-    });
+				$('#camera-screen-default .camera-screen-text').append(`
+					<a href="/interact/shutter" class="btn btn-success mb-3 w-100">🚀 Launch Camera Playground</a>
+				`);
+				let quizRoute = `/quiz_${topic}/1`;
+				$('#camera-screen-default .camera-screen-text').append(`
+					<a href="${quizRoute}" class="btn btn-primary mb-3 w-100">📝 Take the Quiz</a>
+				`);
+				$('#camera-screen-default .camera-screen-text').append(`
+					<a href="/" class="btn btn-outline-secondary mb-3 w-100">🏠 Go Back to Home</a>
+				`);
+
+				$('#camera-screen').hide();
+			}
+		}
+	});
+
+	$('#camera-playback-button').on('click', function () {
+		// Play a sound
+		const audio = new Audio('/static/sounds/playback_button_sound.mp3');
+		audio.play();
+
+		if (counter > 0) {
+			counter--;
+			console.log('Counter:', counter);
+			if (counter > 0) {
+				// Make AJAX request to the backend
+				url = topic + '/' + counter;
+				ajaxRequest(url);
+			} else {
+				$('#camera-screen').empty(); // Clear current content
+				$('#camera-screen-default .camera-screen-text').empty();
+				$('#camera-screen-default .camera-screen-text').append('<p>You have reached the beginning of the content.</p>');
+				$('#camera-screen').hide(); // Hide camera screen
+			}
+		}
+	});
 });

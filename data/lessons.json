@@ -1,71 +1,216 @@
 [
-  {
-    "title": "Learn ISO",
-    "description": "ISO controls the sensitivity to light...",
-    "pages": {
-      "1": {
-        "background": {
-          "type": "image",
-          "src": "/static/images/iso_screen_1.jpg",
-          "alt": "background image"
-        },
-        "title": "What is ISO?",
-        "content": [
-          {
-            "type": "text",
-            "content": "ISO refers to your camera sensor's sensitivity to light."
-          },
-          {
-            "type": "text",
-            "content": "Think of ISO like sunglasses - the higher the ISO, the more \"light-sensitive\" your sensor becomes."
-          }
-        ]
-      }
-    }
-    
-  },
-  {
-    "title": "Learn Shutter Speed",
-    "description": "Shutter speed affects motion blur...",
-    "pages": {
-      "1": {
-        "background": {
-          "type": "image",
-          "src": "/static/images/shutter_speed_screen_1.jpg",
-          "alt": "background image"
-        },
-        "title": "What is Shutter Speed?",
-        "content": [
-          {
-            "type": "text",
-            "content": "Shutter speed refers to how long the camera's shutter is open when taking a photo."
-          }
-        ]
-      }
-    }
-  },
-  {
-    "title": "Learn Aperture",
-    "description": "Aperture controls depth of field...",
-    "pages": {
-      "1": {
-        "background": {
-          "type": "image",
-          "src": "/static/images/aperture_screen_1.jpg",
-          "alt": "background image"
-        },
-        "title": "What is Aperture?",
-        "content": [
-          {
-            "type": "text",
-            "content": "Aperture contorols the size of the opening in the lens."
-          },
-          {
-            "type": "text",
-            "content": "Think of aperture like the eye - the wider the aperture, the wider the opening in the lens."
-          }
-        ]
-      }
-    }
-  }
+	{
+		"title": "Learn ISO",
+		"description": "ISO controls the sensitivity to light...",
+		"pages": {
+			"1": {
+				"background": {
+					"type": "image",
+					"src": "/static/images/iso_screen_1.jpg",
+					"alt": "background image"
+				},
+				"title": "What is ISO?",
+				"content": [
+					{
+						"type": "text",
+						"content": "ISO refers to your camera sensor's sensitivity to light."
+					},
+					{
+						"type": "text",
+						"content": "Think of ISO like sunglasses - the higher the ISO, the more \"light-sensitive\" your sensor becomes."
+					}
+				]
+			},
+			"2": {
+				"background": {
+					"type": "image",
+					"src": "/static/images/iso_screen_2.jpg",
+					"alt": "Camera screen"
+				},
+				"title": "When to Use High vs. Low ISO",
+				"content": [
+					{
+						"type": "text",
+						"content": "Use low ISO (e.g. 100–200) on sunny days to get sharp, clean photos."
+					},
+					{
+						"type": "text",
+						"content": "Use high ISO (e.g. 1600–3200) in low light (night scenes, concerts), but expect more grain (noise)."
+					}
+				]
+			},
+			"3": {
+				"background": {
+					"type": "image",
+					"src": "/static/images/iso_screen_3.jpg",
+					"alt": "Camera screen"
+				},
+				"title": "ISO and Image Noise",
+				"content": [
+					{
+						"type": "text",
+						"content": "The higher the ISO, the more digital noise appears in your photo — visible grain, less detail, and color accuracy."
+					}
+				]
+			},
+			"4": {
+				"background": {
+					"type": "image",
+					"src": "/static/images/iso_screen_4.jpg",
+					"alt": "Camera screen"
+				},
+				"title": "ISO and Motion",
+				"content": [
+					{
+						"type": "text",
+						"content": "Boosting ISO can help you use faster shutter speeds in low light — useful for freezing motion without blur."
+					}
+				]
+			}
+		}
+	},
+	{
+		"title": "Learn Shutter Speed",
+		"description": "Shutter speed affects motion blur...",
+		"pages": {
+			"1": {
+				"background": {
+					"type": "image",
+					"src": "/static/images/shutter_screen_1.jpg",
+					"alt": "background image"
+				},
+				"title": "What is Shutter Speed?",
+				"content": [
+					{
+						"type": "text",
+						"content": "Shutter speed refers to how long the camera's shutter is open when taking a photo."
+					}
+				]
+			},
+			"2": {
+				"background": {
+					"type": "image",
+					"src": "/static/images/shutter_screen_2.jpg",
+					"alt": "Camera screen"
+				},
+				"title": "Fast vs. Slow Shutter Speed",
+				"content": [
+					{
+						"type": "text",
+						"content": "Fast (1/1000s) → Freeze action (sports, wildlife)"
+					},
+					{
+						"type": "text",
+						"content": "Slow (1/10s or slower) → Blur motion (waterfalls, night lights)"
+					}
+				]
+			},
+			"3": {
+				"background": {
+					"type": "image",
+					"src": "/static/images/shutter_screen_3.jpg",
+					"alt": "Camera screen"
+				},
+				"title": "Shutter Speed and Light",
+				"content": [
+					{
+						"type": "text",
+						"content": "Slower shutter speed allows more light, good for dark settings, but risks blur without a tripod."
+					}
+				]
+			},
+			"4": {
+				"background": {
+					"type": "image",
+					"src": "/static/images/shutter_screen_4.jpg",
+					"alt": "Camera screen"
+				},
+				"title": "Creative Effects with Shutter Speed",
+				"content": [
+					{
+						"type": "text",
+						"content": "Light painting, star trails, or smooth water all use slow shutter speeds."
+					},
+					{
+						"type": "text",
+						"content": "Panning can create a sharp subject with a blurred background."
+					}
+				]
+			}
+		}
+	},
+	{
+		"title": "Learn Aperture",
+		"description": "Aperture controls depth of field...",
+		"pages": {
+			"1": {
+				"background": {
+					"type": "image",
+					"src": "/static/images/aperture_screen_1.jpg",
+					"alt": "background image"
+				},
+				"title": "What is Aperture?",
+				"content": [
+					{
+						"type": "text",
+						"content": "Aperture contorols the size of the opening in the lens."
+					},
+					{
+						"type": "text",
+						"content": "Think of aperture like the eye - the wider the aperture, the wider the opening in the lens."
+					}
+				]
+			},
+			"2": {
+				"background": {
+					"type": "image",
+					"src": "/static/images/aperture_screen_2.jpg",
+					"alt": "Camera screen"
+				},
+				"title": "Aperture and Depth of Field",
+				"content": [
+					{
+						"type": "text",
+						"content": "Wide aperture (f/1.8) → Shallow depth of field → Blurry background (great for portraits)"
+					},
+					{
+						"type": "text",
+						"content": "Narrow aperture (f/11+) → Deep focus → More in focus (great for landscapes)"
+					}
+				]
+			},
+			"3": {
+				"background": {
+					"type": "image",
+					"src": "/static/images/aperture_screen_3.jpg",
+					"alt": "Camera screen"
+				},
+				"title": "Aperture and Light",
+				"content": [
+					{
+						"type": "text",
+						"content": "A wider aperture lets in more light, helping in low-light situations without needing a flash or high ISO."
+					}
+				]
+			},
+			"4": {
+				"background": {
+					"type": "image",
+					"src": "/static/images/aperture_screen_4.jpg",
+					"alt": "Camera screen"
+				},
+				"title": "Aperture Trade-Offs",
+				"content": [
+					{
+						"type": "text",
+						"content": "Wider aperture = more light and blur"
+					},
+					{
+						"type": "text",
+						"content": "Narrow aperture = sharper background but needs more light or slower shutter speed."
+					}
+				]
+			}
+		}
+	}
 ]
