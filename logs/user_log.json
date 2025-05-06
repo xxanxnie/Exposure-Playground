@@ -150,5 +150,37 @@
   {
     "event": "Visited about page",
     "time": "2025-05-06T17:50:47.263406"
+  },
+  {
+    "event": "Visited about page",
+    "time": "2025-05-06T17:54:04.911417"
+  },
+  {
+    "event": "Entered home page",
+    "time": "2025-05-06T17:54:12.206138"
+  },
+  {
+    "event": "Visited about page",
+    "time": "2025-05-06T17:54:13.418546"
+  },
+  {
+    "event": "Visited about page",
+    "time": "2025-05-06T17:54:40.393942"
+  },
+  {
+    "event": "Entered home page",
+    "time": "2025-05-06T17:55:18.131857"
+  },
+  {
+    "event": "Visited about page",
+    "time": "2025-05-06T17:55:19.263240"
+  },
+  {
+    "event": "Visited about page",
+    "time": "2025-05-06T17:55:55.870038"
+  },
+  {
+    "event": "Visited about page",
+    "time": "2025-05-06T17:55:59.963108"
   }
 ]
