@@ -318,14 +318,23 @@ body {
 	transform: translateY(-8px);
 	box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
 }
-
-.shadow-glow {
-	transition: box-shadow 0.3s ease;
-}
-
-.shadow-glow:hover {
-	box-shadow: 0 0 15px rgba(255, 193, 7, 0.6);
-}
+.custom-white-btn {
+	background-color: #ffffff;
+	color: #333;
+	border: 1px solid #ccc;
+	transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .custom-white-btn:hover {
+	background-color: #dcdcdc; /* light grey on hover */
+	color: #111;
+  }
+  
+  /* Optional: soft glow on hover */
+  .shadow-glow:hover {
+	box-shadow: 0 0 15px rgba(180, 180, 180, 0.5); 
+  }
+  
 
 .bold-zoom-title {
 	font-size: 2.75rem;
@@ -349,3 +358,5 @@ body {
 .camera-sfx-wrapper {
 	cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="32" width="32"><text y="25" font-size="28">💥</text></svg>') 16 16, auto;
 }
+
+

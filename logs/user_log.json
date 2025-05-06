@@ -1,30 +1,58 @@
 [
   {
     "event": "Entered home page",
-    "time": "2025-05-06T16:12:20.495273"
+    "time": "2025-05-06T16:38:57.737633"
+  },
+  {
+    "event": "Entered home page",
+    "time": "2025-05-06T16:38:59.386652"
+  },
+  {
+    "event": "Entered home page",
+    "time": "2025-05-06T16:39:06.907191"
+  },
+  {
+    "event": "Entered home page",
+    "time": "2025-05-06T16:39:22.340433"
+  },
+  {
+    "event": "Entered home page",
+    "time": "2025-05-06T16:39:24.467620"
+  },
+  {
+    "event": "Entered home page",
+    "time": "2025-05-06T16:41:00.068872"
+  },
+  {
+    "event": "Entered home page",
+    "time": "2025-05-06T16:41:04.147477"
+  },
+  {
+    "event": "Entered home page",
+    "time": "2025-05-06T16:41:41.512775"
+  },
+  {
+    "event": "Entered home page",
+    "time": "2025-05-06T16:41:42.729328"
+  },
+  {
+    "event": "Entered home page",
+    "time": "2025-05-06T16:42:29.725741"
+  },
+  {
+    "event": "Entered home page",
+    "time": "2025-05-06T16:42:34.155453"
   },
   {
     "event": "Entered lesson: iso",
-    "time": "2025-05-06T16:12:29.593526"
+    "time": "2025-05-06T16:42:40.665634"
+  },
+  {
+    "event": "Enter lesson: iso, Page: 1",
+    "time": "2025-05-06T16:42:41.796075"
   },
   {
     "event": "Entered home page",
-    "time": "2025-05-06T16:12:34.626827"
-  },
-  {
-    "event": "Entered lesson: iso",
-    "time": "2025-05-06T16:12:37.905865"
-  },
-  {
-    "event": "Visited about page",
-    "time": "2025-05-06T16:12:46.730175"
-  },
-  {
-    "event": "Entered home page",
-    "time": "2025-05-06T16:12:49.751083"
-  },
-  {
-    "event": "Entered home page",
-    "time": "2025-05-06T16:12:54.679076"
+    "time": "2025-05-06T16:42:53.994605"
   }
 ]
