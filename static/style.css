@@ -73,11 +73,33 @@ body {
 	transform: translate(-50%, -50%);
 }
 
+.learn-camera-container #red-arrow-instruction-1 {
+	position: absolute;
+	top: 16%;
+	left: 74%;
+	transform: translate(-50%, -50%);
+	font-size: 1.2rem;
+	color: #000;
+	text-align: center;
+	width: 100%;
+}
+
 .learn-camera-container #red-arrow-2 {
 	position: absolute;
 	top: 42%;
 	left: 71%;
 	transform: translate(-50%, -50%);
+}
+
+.learn-camera-container #red-arrow-instruction-2 {
+	position: absolute;
+	top: 42%;
+	left: 71%;
+	transform: translate(-50%, -50%);
+	font-size: 1.2rem;
+	color: #fff;
+	text-align: center;
+	width: 100%;
 }
 
 .learn-camera-container #camera-shutter-button {

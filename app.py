@@ -16,7 +16,12 @@ app.secret_key = os.urandom(24)
 @app.route("/")
 def home():
 	log_event("Entered home page")
-	return render_template("home.html")
+	number_of_pages_iso = len(lessons[0]['pages'])
+	number_of_pages_shutter = len(lessons[1]['pages'])
+	number_of_pages_aperture = len(lessons[2]['pages'])
+	return render_template("home.html", number_of_pages_iso=number_of_pages_iso,
+						   number_of_pages_shutter=number_of_pages_shutter,
+						   number_of_pages_aperture=number_of_pages_aperture)
 
 @app.route("/learn")
 def learn_overview():
@@ -33,14 +38,11 @@ def learn(topic):
 	}
 
 	if topic not in topic_map:
-		# TODO include some kind of error message?
 		return redirect(url_for("home"))
 
-	title = lessons[topic_map[topic]]['title']
-	description = lessons[topic_map[topic]]['description']
 	number_of_pages = len(lessons[topic_map[topic]]['pages'])
 	log_event(f"Entered lesson: {topic}")
-	return render_template("learn.html", title=title, description=description, topic=topic, number_of_pages=number_of_pages)
+	return render_template("learn.html", topic=topic, number_of_pages=number_of_pages)
 
 @app.route("/learn/<topic>/<page>")
 def learn_page(topic, page):

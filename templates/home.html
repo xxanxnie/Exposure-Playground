@@ -48,7 +48,7 @@
 						<!-- Progress Bar -->
 						<div class="w-100 mt-3">
 							<div class="progress" style="height: 6px;">
-								<div class="progress-bar bg-success" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+								<div class="progress-bar bg-success" role="progressbar" data-topic="iso" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
 							</div>
 						</div>
 						<!-- Progress Bar -->
@@ -68,7 +68,7 @@
 						<!-- Progress Bar -->
 						<div class="w-100 mt-3">
 							<div class="progress" style="height: 6px;">
-								<div class="progress-bar bg-success" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+								<div class="progress-bar bg-success" role="progressbar" data-topic="shutter" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
 							</div>
 						</div>
 						<!-- Progress Bar -->
@@ -89,7 +89,7 @@
 						<!-- Progress Bar -->
 						<div class="w-100 mt-3">
 							<div class="progress" style="height: 6px;">
-								<div class="progress-bar bg-success" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+								<div class="progress-bar bg-success" role="progressbar" data-topic="aperture" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
 							</div>
 						</div>
 						<!-- Progress Bar -->
@@ -103,8 +103,33 @@
 </body>
 
 <script>
+	const topics = {
+		'iso': "{{ number_of_pages_iso | int }}",
+		'shutter': "{{ number_of_pages_shutter | int }}",
+		'aperture': "{{ number_of_pages_aperture | int }}"
+	};
 	const cameraImage = document.getElementById('camera-image');
 	const shutterSound = new Audio('/static/sounds/shutter_home.mp3');
+
+	// Update progress bars for each topic
+    Object.keys(topics).forEach(topic => {
+        const progressKey = `learning_progress_${topic}`;
+        const savedProgress = sessionStorage.getItem(progressKey);
+        const totalPages = topics[topic];
+
+        // Calculate progress percentage
+        let progressPercentage = 0;
+        if (savedProgress && !isNaN(savedProgress)) {
+            progressPercentage = (parseInt(savedProgress, 10) / totalPages) * 100;
+        }
+
+        // Update the progress bar width
+        const progressBar = document.querySelector(`.progress-bar[data-topic="${topic}"]`);
+        if (progressBar) {
+            progressBar.style.width = `${progressPercentage}%`;
+            progressBar.setAttribute('aria-valuenow', progressPercentage.toFixed(0));
+        }
+    });
 
 	cameraImage.addEventListener('mouseenter', () => {
 		shutterSound.currentTime = 0;

@@ -68,6 +68,16 @@ function ajaxRequest(url) {
 $(document).ready(function () {
 	let counter = 0;
 
+	// Retrieve progress from sessionStorage
+    const progressKey = `learning_progress_${topic}`;
+    const savedProgress = sessionStorage.getItem(progressKey);
+	if (savedProgress && !isNaN(savedProgress) && savedProgress > 0) {
+        counter = parseInt(savedProgress, 10);
+        console.log('Resuming progress at page:', counter);
+        url = topic + '/' + counter;
+        ajaxRequest(url);
+    }
+
 	// Handle button click event
 	$('#camera-shutter-button').on('click', function () {
 		// Play sound effect
@@ -78,6 +88,8 @@ $(document).ready(function () {
 			counter++;
 			console.log('Counter:', counter);
 			if (counter <= numberOfPages) {
+				// Save progress to sessionStorage
+				sessionStorage.setItem(progressKey, counter);
 				// Make AJAX request to the backend
 				url = topic + '/' + counter;
 				ajaxRequest(url);
@@ -113,6 +125,8 @@ $(document).ready(function () {
 			counter--;
 			console.log('Counter:', counter);
 			if (counter > 0) {
+				// Save progress to sessionStorage
+				sessionStorage.setItem(progressKey, counter);
 				// Make AJAX request to the backend
 				url = topic + '/' + counter;
 				ajaxRequest(url);
