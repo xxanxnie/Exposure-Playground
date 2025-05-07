@@ -100,8 +100,9 @@ $(document).ready(function () {
 				$('#camera-screen-default .camera-screen-text').append('<p class="mb-3">You have reached the end of the content!</p>');
 
 
+				let interactionRoute = `/interact/${topic}`;
 				$('#camera-screen-default .camera-screen-text').append(`
-					<a href="/interact/shutter" class="btn btn-success mb-3 w-100">🚀 Launch Camera Playground</a>
+					<a href="${interactionRoute}" class="btn btn-success mb-3 w-100">🚀 Launch Camera Playground</a>
 				`);
 				let quizRoute = `/quiz_${topic}/1`;
 				$('#camera-screen-default .camera-screen-text').append(`
