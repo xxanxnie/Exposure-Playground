@@ -50,21 +50,23 @@
     {% include "navbar.html" %}
 
     <div class="container mt-5 text-center">
-        <h2>🎉 Quiz Complete!</h2>
-        <p class="lead">Your score: <strong>{{ score }} / {{ total }}</strong></p>
+        <h2>🎉 Quiz Complete! 🎉</h2>
+        <p class="lead fs-3">Your score: <strong>{{ score }} / {{ total }}</strong></p>
 
         <div class="mt-4 d-flex flex-row justify-content-center gap-3">
+            <a class="btn btn-primary" href="/">🏠 Back to Home</a>
+
             {% if section == "ISO" %}
-            <a class="btn btn-primary" href="/quiz_iso/1">Try Again!</a>
+            <a class="btn btn-primary" href="/quiz_iso/1">📝 Try Again!</a>
             {% elif section == "Aperture" %}
-            <a class="btn btn-primary" href="/quiz_aperture/1">Try Again!</a>
+            <a class="btn btn-primary" href="/quiz_aperture/1">📝 Try Again!</a>
             {% elif section == "Shutter" %}
-            <a class="btn btn-primary" href="/quiz_shutter/1">Try Again!</a>
+            <a class="btn btn-primary" href="/quiz_shutter/1">📝 Try Again!</a>
             {% else %}
-            <a class="btn btn-primary" href="/quiz/1">Try Again!</a>
+            <a class="btn btn-primary" href="/quiz/1">📝 Try Again!</a>
             {% endif %}
-        
-            <a class="btn btn-primary" href="/about">Learn More</a>
+
+            <a class="btn btn-primary" href="/about">📘 Learn More</a>
         </div>
     </div>
 
