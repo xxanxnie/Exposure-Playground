@@ -7,18 +7,34 @@
 	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
 </head>
+
 <body>
 
 	{% include "navbar.html" %}
 
-	<div class="interact-container">
-		<div class="interact-camera-wrapper">
-			<img src="{{ url_for('static', filename='images/camera.png') }}" class="interact-camera-img" alt="Camera Body">
-			<img id="photo" src="{{ url_for('static', filename='images/' + 
-			interaction.image_prefix + interaction.options[0]|replace('/', '')|
-			replace('.', '') + '.png') }}"
-			class="interact-photo-display" alt="Camera Display">
+	<div class="interact-container d-flex justify-content-center">
+		<!-- Left side: Camera + Buttons -->
+		<div class="d-flex flex-column align-items-center me-5">
+			<div class="interact-camera-wrapper">
+				<img src="{{ url_for('static', filename='images/camera.png') }}" class="interact-camera-img" alt="Camera Body">
+				<img id="photo" src="{{ url_for('static', filename='images/' + 
+					interaction.image_prefix + interaction.options[0]|replace('/', '')|
+					replace('.', '') + '.png') }}"
+					class="interact-photo-display" alt="Camera Display">
+			</div>
+			<div class="interact-buttons text-center" style="position: relative;">
+				<span style="position: relative; left: -250px;">
+					<a href="/" class="btn btn-outline-secondary">🏠 Back to Home</a>
+				</span>
+				<span style="position: relative; left: 20px;">
+					<a href="/quiz" class="btn btn-primary">📝 Go to Quiz</a>
+				</span>
+			</div>
+			
+
 		</div>
+	
+		<!-- Right side: Slider -->
 		<div class="interact-controls">
 			<div class="interact-title">{{ interaction.title }}</div>
 			<div class="interact-vertical-bar-wrapper">
@@ -34,7 +50,6 @@
 		</div>
 	</div>
 	
-
 	<script>
 		const options = Array.from(document.querySelectorAll('.interact-bar-option'));
 		const handle = document.getElementById('handle');

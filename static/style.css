@@ -381,4 +381,10 @@ body {
 	cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="32" width="32"><text y="25" font-size="28">💥</text></svg>') 16 16, auto;
 }
 
+.interact-container {
+	margin-top: 30px;
+}
 
+.interact-buttons {
+	margin-top: -70px;
+}
