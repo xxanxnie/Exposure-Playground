@@ -1,22 +1,10 @@
 [
   {
     "event": "Entered home page",
-    "time": "2025-05-10T21:32:09.641137"
+    "time": "2025-05-10T21:49:52.035188"
   },
   {
     "event": "Answered question 1 with Decrease",
-    "time": "2025-05-10T21:32:14.051070"
-  },
-  {
-    "event": "Answered question 2 with Decrease",
-    "time": "2025-05-10T21:32:15.477582"
-  },
-  {
-    "event": "Answered question 3 with Decrease",
-    "time": "2025-05-10T21:32:16.596207"
-  },
-  {
-    "event": "Entered home page",
-    "time": "2025-05-10T21:32:18.643486"
+    "time": "2025-05-10T21:50:10.420649"
   }
 ]
