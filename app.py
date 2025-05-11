@@ -83,7 +83,11 @@ def quiz_iso_section(qid):
 		session["answers_iso"] = []
 	if request.method == "POST":
 		ans = request.form.get("answer")
-		session["answers_iso"].append(ans)
+		answers = session.get("answers_iso", [])
+		if len(answers) >= qid:
+			answers[qid - 1] = ans
+		else:
+			answers.append(ans)
 		session.modified = True
 		if qid < total:
 			return redirect(url_for("quiz_iso_section", qid=qid+1))
@@ -104,7 +108,11 @@ def quiz_shutter(qid):
 		session["answers_shutter"] = []
 	if request.method == "POST":
 		ans = request.form.get("answer")
-		session["answers_shutter"].append(ans)
+		answers = session.get("answers_shutter", [])
+		if len(answers) >= qid:
+			answers[qid - 1] = ans
+		else:
+			answers.append(ans)
 		session.modified = True
 		if qid < total:
 			return redirect(url_for("quiz_shutter_section", qid=qid+1))
@@ -125,7 +133,11 @@ def quiz_aperture(qid):
 		session["answers_aperture"] = []
 	if request.method == "POST":
 		ans = request.form.get("answer")
-		session["answers_aperture"].append(ans)
+		answers = session.get("answers_aperture", [])
+		if len(answers) >= qid:
+			answers[qid - 1] = ans
+		else:
+			answers.append(ans)
 		session.modified = True
 		if qid < total:
 			return redirect(url_for("quiz_aperture_section", qid=qid+1))
@@ -221,11 +233,15 @@ def quiz_page(question_id):
 	answers = session["answers"]
 
 	if request.method == "POST":
-		ans = request.form.get("answer")
-		answers[question_id - 1] = ans
+		answer = request.form.get("answer")
+		answers[question_id - 1] = answer
+		answers = session.get("answers", [])
+		if len(answers) >= question_id:
+			answers[question_id - 1] = answer
+		else:
+			answers.append(answer)
 		session["answers"] = answers
 		session.modified = True
-
 
 		if question_id < total:
 			return redirect(url_for("quiz_page", question_id=question_id + 1))
