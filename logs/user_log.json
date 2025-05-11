@@ -1,10 +1,74 @@
 [
   {
-    "event": "Entered home page",
-    "time": "2025-05-10T21:49:52.035188"
+    "event": "Answered question 1 with Decrease",
+    "time": "2025-05-10T22:01:21.640573"
   },
   {
     "event": "Answered question 1 with Decrease",
-    "time": "2025-05-10T21:50:10.420649"
+    "time": "2025-05-10T22:01:23.698727"
+  },
+  {
+    "event": "Answered question 2 with Decrease",
+    "time": "2025-05-10T22:01:24.359609"
+  },
+  {
+    "event": "Answered question 3 with Decrease",
+    "time": "2025-05-10T22:01:26.190166"
+  },
+  {
+    "event": "Answered question 4 with Increase",
+    "time": "2025-05-10T22:01:27.144933"
+  },
+  {
+    "event": "Answered question 5 with Decrease",
+    "time": "2025-05-10T22:01:28.066785"
+  },
+  {
+    "event": "Answered question 6 with Decrease",
+    "time": "2025-05-10T22:01:28.634093"
+  },
+  {
+    "event": "Answered question 7 with Decrease",
+    "time": "2025-05-10T22:01:29.623255"
+  },
+  {
+    "event": "Answered question 8 with Decrease",
+    "time": "2025-05-10T22:01:30.207356"
+  },
+  {
+    "event": "Answered question 9 with Decrease",
+    "time": "2025-05-10T22:01:30.871301"
+  },
+  {
+    "event": "Answered question 10 with Decrease",
+    "time": "2025-05-10T22:01:31.721770"
+  },
+  {
+    "event": "Answered question 11 with Decrease",
+    "time": "2025-05-10T22:01:32.345548"
+  },
+  {
+    "event": "Answered question 12 with Decrease",
+    "time": "2025-05-10T22:01:33.865658"
+  },
+  {
+    "event": "Answered question 13 with Decrease",
+    "time": "2025-05-10T22:01:34.636516"
+  },
+  {
+    "event": "Answered question 14 with Decrease",
+    "time": "2025-05-10T22:01:35.421509"
+  },
+  {
+    "event": "Answered question 15 with Decrease",
+    "time": "2025-05-10T22:01:36.365360"
+  },
+  {
+    "event": "Reached quiz result page",
+    "time": "2025-05-10T22:01:36.373944"
+  },
+  {
+    "event": "Entered home page",
+    "time": "2025-05-10T22:01:40.161770"
   }
 ]

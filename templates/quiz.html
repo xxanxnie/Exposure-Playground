@@ -34,6 +34,12 @@
             min-width: 140px;
         }
 
+        .quiz-nav {
+            display: flex;
+            justify-content: space-between;
+            width: 600px;
+            margin: 1rem auto 0;
+        }
 
 
 	</style>
@@ -67,7 +73,7 @@
 				</div>
 				{% endfor %}
 
-                <div class="d-flex justify-content-center gap-3 mt-4 quiz-nav">
+                <div class="quiz-nav mt-4">
                     {% if question_id > 1 %}
                         {% if request.endpoint == 'quiz_page' %}
                             <a href="{{ url_for('quiz_page', question_id=question_id-1) }}" class="btn btn-primary">← Previous</a>
