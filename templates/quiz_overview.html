@@ -11,6 +11,12 @@
 <body>
   {% include "navbar.html" %}
 
+  <script>
+    // clear any previously stored quiz answers
+    ['quiz_page','quiz_iso_section','quiz_shutter_section','quiz_aperture_section']
+      .forEach(k=>sessionStorage.removeItem(k));
+  </script>
+
   <div class="container py-5">
     <h2 class="mb-5 text-center">Choose a Quiz</h2>
 

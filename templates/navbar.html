@@ -38,7 +38,16 @@
 					
 					<!--Quiz Dropdown-->
 					<li class="nav-item">
-						<a class="nav-link" href="/quiz" style="color: var(--base-color); margin-left: 20px;">Quiz</a>
+{#						<a class="nav-link" href="/quiz" style="color: var(--base-color); margin-left: 20px;">Quiz</a>#}
+                        <a class="nav-link"
+                      href="/quiz"
+                      style="color: var(--base-color); margin-left: 20px;"
+                      onclick="
+                        ['quiz_page','quiz_iso_section','quiz_shutter_section','quiz_aperture_section']
+                          .forEach(k=>sessionStorage.removeItem(k));
+                      ">
+                     Quiz
+                        </a>
 					</li>
 					
 					<!--About--> 

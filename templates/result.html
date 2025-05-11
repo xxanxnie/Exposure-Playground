@@ -54,16 +54,19 @@
         <p class="lead fs-3">Your score: <strong>{{ score }} / {{ total }}</strong></p>
 
         <div class="mt-4 d-flex flex-row justify-content-center gap-3">
-            <a class="btn btn-primary" href="/">🏠 Back to Home</a>
+            <a class="btn btn-primary"
+               href="/" onclick="['quiz_page','quiz_iso_section','quiz_shutter_section','quiz_aperture_section']
+                      .forEach(k=>sessionStorage.removeItem(k));">
+                🏠 Back to Home</a>
 
             {% if section == "ISO" %}
-            <a class="btn btn-primary" href="/quiz_iso/1">📝 Try Again!</a>
+            <a class="btn btn-primary" href="/quiz_iso/1" onclick="sessionStorage.removeItem('quiz_iso_section');">📝 Try Again!</a>
             {% elif section == "Aperture" %}
-            <a class="btn btn-primary" href="/quiz_aperture/1">📝 Try Again!</a>
+            <a class="btn btn-primary" href="/quiz_aperture/1" onclick="sessionStorage.removeItem('quiz_aperture_section');">📝 Try Again!</a>
             {% elif section == "Shutter" %}
-            <a class="btn btn-primary" href="/quiz_shutter/1">📝 Try Again!</a>
+            <a class="btn btn-primary" href="/quiz_shutter/1" onclick="sessionStorage.removeItem('quiz_shutter_section');">📝 Try Again!</a>
             {% else %}
-            <a class="btn btn-primary" href="/quiz/1">📝 Try Again!</a>
+            <a class="btn btn-primary" href="/quiz/1" onclick="sessionStorage.removeItem('quiz_page');">📝 Try Again!</a>
             {% endif %}
 
             <a class="btn btn-primary" href="/about">📘 Learn More</a>
