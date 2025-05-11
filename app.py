@@ -210,31 +210,41 @@ def result_aperture_section():
 		section="Aperture",
 		all_questions=all_questions
 	)
+
 @app.route("/quiz/<int:question_id>", methods=["GET", "POST"])
 def quiz_page(question_id):
-	if question_id == 1:
-		session["answers"] = [] 
-		
-	elif "answers" not in session:
-		session["answers"] = []
+	total = len(quiz)
+
+	if "answers" not in session:
+		session["answers"] = [None] * total
+
+	answers = session["answers"]
 
 	if request.method == "POST":
-		answer = request.form.get("answer")
-		log_event(f"Answered question {question_id} with {answer}")
-		session["answers"].append(answer)
+		ans = request.form.get("answer")
+		answers[question_id - 1] = ans
+		session["answers"] = answers
 		session.modified = True
 
-		if question_id < len(quiz):
+
+		if question_id < total:
 			return redirect(url_for("quiz_page", question_id=question_id + 1))
 		else:
 			return redirect(url_for("result"))
 
-	if question_id < 1 or question_id > len(quiz):
+	if question_id < 1 or question_id > total:
 		return redirect(url_for("quiz_page", question_id=1))
+
 	question = quiz[question_id - 1]
-	return render_template("quiz.html", question=question, question_id=question_id, total=len(quiz))
+	selected = answers[question_id - 1]
 
-
+	return render_template(
+		"quiz.html",
+		question=question,
+		question_id=question_id,
+		total=total,
+		selected_answer=selected
+	)
 @app.route("/result")
 def result():
 	log_event("Reached quiz result page")
